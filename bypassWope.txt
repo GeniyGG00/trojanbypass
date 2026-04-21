@@ -1,1 +1,206 @@
-ewogICJkbnMiOiB7CiAgICAic2VydmVycyI6IFsKICAgICAgIjE0NC4zMS4xNTEuNjQiLAogICAgICAiMS4xLjEuMSIKICAgIF0sCiAgICAicXVlcnlTdHJhdGVneSI6ICJVc2VJUCIKICB9LAogICJyb3V0aW5nIjogewogICAgImRvbWFpblN0cmF0ZWd5IjogIklQSWZOb25NYXRjaCIsCiAgICAiZG9tYWluTWF0Y2hlciI6ICJoeWJyaWQiLAogICAgInJ1bGVzIjogWwogICAgICB7CiAgICAgICAgInR5cGUiOiAiZmllbGQiLAogICAgICAgICJwcm90b2NvbCI6IFsiYml0dG9ycmVudCJdLAogICAgICAgICJvdXRib3VuZFRhZyI6ICJkaXJlY3QiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAidHlwZSI6ICJmaWVsZCIsCiAgICAgICAgImRvbWFpbiI6IFsKICAgICAgICAgICJkb21haW46d2lsZGJlcnJpZXMucnUiLAogICAgICAgICAgImRvbWFpbjp3aWxkYmVycmllcy5ieSIsCiAgICAgICAgICAiZG9tYWluOndpbGRiZXJyaWVzLmt6IiwKICAgICAgICAgICJkb21haW46d2lsZGJlcnJpZXMuYW0iLAogICAgICAgICAgImRvbWFpbjp3aWxkYmVycmllcy5rZyIsCiAgICAgICAgICAiZG9tYWluOndpbGRiZXJyaWVzLnV6IiwKICAgICAgICAgICJkb21haW46c2JlcmJhbmsucnUiLAogICAgICAgICAgImRvbWFpbjpzYmVyLnJ1IiwKICAgICAgICAgICJkb21haW46c2JlcmJhbmsuY29tIiwKICAgICAgICAgICJkb21haW46b3pvbi5ydSIsCiAgICAgICAgICAiZG9tYWluOm96b24uY29tIiwKICAgICAgICAgICJkb21haW46b3pvbmJhbmsucnUiLAogICAgICAgICAgImRvbWFpbjpnb3N1c2x1Z2kucnUiLAogICAgICAgICAgImRvbWFpbjplc2lhLmdvc3VzbHVnaS5ydSIsCiAgICAgICAgICAiZG9tYWluOmxrLmdvc3VzbHVnaS5ydSIsCiAgICAgICAgICAiZG9tYWluOmd1LXN0LnJ1IiwKICAgICAgICAgICJkb21haW46eWFuZGV4LnJ1IiwKICAgICAgICAgICJkb21haW46eWFuZGV4LmNvbSIsCiAgICAgICAgICAiZG9tYWluOnlhLnJ1IiwKICAgICAgICAgICJkb21haW46eWFuZGV4Lm5ldCIsCiAgICAgICAgICAiZG9tYWluOmtpbm9wb2lzay5ydSIsCiAgICAgICAgICAiZG9tYWluOmhkLmtpbm9wb2lzay5ydSIsCiAgICAgICAgICAiZG9tYWluOml2aS5ydSIsCiAgICAgICAgICAiZG9tYWluOm9ra28udHYiLAogICAgICAgICAgImRvbWFpbjptb3JlLnR2IiwKICAgICAgICAgICJkb21haW46c3RhcnQucnUiLAogICAgICAgICAgImRvbWFpbjpwcmVtaWVyLm9uZSIsCiAgICAgICAgICAiZG9tYWluOm1lZ29nby5ydSIsCiAgICAgICAgICAiZG9tYWluOmFtZWRpYXRla2EucnUiLAogICAgICAgICAgImRvbWFpbjp2ay5jb20iLAogICAgICAgICAgImRvbWFpbjp2ay5ydSIsCiAgICAgICAgICAiZG9tYWluOnVzZXJhcGkuY29tIiwKICAgICAgICAgICJkb21haW46dmsubWUiLAogICAgICAgICAgImRvbWFpbjptYWlsLnJ1IiwKICAgICAgICAgICJkb21haW46bGlzdC5ydSIsCiAgICAgICAgICAiZG9tYWluOmluYm94LnJ1IiwKICAgICAgICAgICJkb21haW46YmsucnUiLAogICAgICAgICAgImRvbWFpbjpyYW1ibGVyLnJ1IiwKICAgICAgICAgICJkb21haW46bGl2ZWpvdXJuYWwuY29tIiwKICAgICAgICAgICJkb21haW46am91cm5hbC50aW5rb2ZmLnJ1IiwKICAgICAgICAgICJkb21haW46dGJhbmsucnUiLAogICAgICAgICAgImRvbWFpbjp0aW5rb2ZmLnJ1IiwKICAgICAgICAgICJkb21haW46YXZpdG8ucnUiLAogICAgICAgICAgImRvbWFpbjp5b3VsYS5ydSIsCiAgICAgICAgICAiZG9tYWluOmRucy1zaG9wLnJ1IiwKICAgICAgICAgICJkb21haW46Y2l0aWxpbmsucnUiLAogICAgICAgICAgImRvbWFpbjptdmlkZW8ucnUiLAogICAgICAgICAgImRvbWFpbjplbGRvcmFkby5ydSIsCiAgICAgICAgICAiZG9tYWluOmxhbW9kYS5ydSIsCiAgICAgICAgICAiZG9tYWluOmFsaWV4cHJlc3MucnUiCiAgICAgICAgXSwKICAgICAgICAib3V0Ym91bmRUYWciOiAiZGlyZWN0IgogICAgICB9LAogICAgICB7CiAgICAgICAgInR5cGUiOiAiZmllbGQiLAogICAgICAgICJkb21haW4iOiBbCiAgICAgICAgICAiZ2Vvc2l0ZTpjYXRlZ29yeS1nYW1lcyIKICAgICAgICBdLAogICAgICAgICJvdXRib3VuZFRhZyI6ICJwcm94eV9nYW1lcyIKICAgICAgfSwKICAgICAgewogICAgICAgICJ0eXBlIjogImZpZWxkIiwKICAgICAgICAiZG9tYWluIjogWwogICAgICAgICAgImdlb3NpdGU6eW91dHViZSIsCiAgICAgICAgICAiZ2Vvc2l0ZTp0ZWxlZ3JhbSIsCiAgICAgICAgICAiZ2Vvc2l0ZTpuZXRmbGl4IiwKICAgICAgICAgICJnZW9zaXRlOnNwb3RpZnkiLAogICAgICAgICAgImdlb3NpdGU6ZGlzY29yZCIsCiAgICAgICAgICAiZ2Vvc2l0ZTp0d2l0Y2giCiAgICAgICAgXSwKICAgICAgICAib3V0Ym91bmRUYWciOiAicHJveHlfc3RyZWFtIgogICAgICB9LAogICAgICB7CiAgICAgICAgInR5cGUiOiAiZmllbGQiLAogICAgICAgICJuZXR3b3JrIjogInRjcCx1ZHAiLAogICAgICAgICJvdXRib3VuZFRhZyI6ICJwcm94eV9zdHJlYW0iCiAgICAgIH0KICAgIF0KICB9LAogICJpbmJvdW5kcyI6IFsKICAgIHsKICAgICAgInRhZyI6ICJzb2NrcyIsCiAgICAgICJwb3J0IjogMTA4MDgsCiAgICAgICJsaXN0ZW4iOiAiMC4wLjAuMCIsCiAgICAgICJwcm90b2NvbCI6ICJzb2NrcyIsCiAgICAgICJzZXR0aW5ncyI6IHsKICAgICAgICAidWRwIjogdHJ1ZSwKICAgICAgICAiYXV0aCI6ICJub2F1dGgiCiAgICAgIH0sCiAgICAgICJzbmlmZmluZyI6IHsKICAgICAgICAiZW5hYmxlZCI6IHRydWUsCiAgICAgICAgInJvdXRlT25seSI6IGZhbHNlLAogICAgICAgICJkZXN0T3ZlcnJpZGUiOiBbImh0dHAiLCAidGxzIiwgInF1aWMiXQogICAgICB9CiAgICB9LAogICAgewogICAgICAidGFnIjogImh0dHAiLAogICAgICAicG9ydCI6IDEwODA5LAogICAgICAibGlzdGVuIjogIjAuMC4wLjAiLAogICAgICAicHJvdG9jb2wiOiAiaHR0cCIsCiAgICAgICJzZXR0aW5ncyI6IHsKICAgICAgICAiYWxsb3dUcmFuc3BhcmVudCI6IGZhbHNlCiAgICAgIH0sCiAgICAgICJzbmlmZmluZyI6IHsKICAgICAgICAiZW5hYmxlZCI6IHRydWUsCiAgICAgICAgInJvdXRlT25seSI6IGZhbHNlLAogICAgICAgICJkZXN0T3ZlcnJpZGUiOiBbImh0dHAiLCAidGxzIiwgInF1aWMiXQogICAgICB9CiAgICB9CiAgXSwKICAib3V0Ym91bmRzIjogWwogICAgewogICAgICAidGFnIjogInByb3h5X2dhbWVzIiwKICAgICAgInByb3RvY29sIjogInRyb2phbiIsCiAgICAgICJzZXR0aW5ncyI6IHsKICAgICAgICAic2VydmVycyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgImFkZHJlc3MiOiAicnUuZmVkZXJhbC11c2EuY29tIiwKICAgICAgICAgICAgInBvcnQiOiA4NDQzLAogICAgICAgICAgICAicGFzc3dvcmQiOiAiUWZ3ME1xb3lOa1N2cWpSaFpfeDVXTk0zVl90RjZxIgogICAgICAgICAgfQogICAgICAgIF0KICAgICAgfSwKICAgICAgInN0cmVhbVNldHRpbmdzIjogewogICAgICAgICJuZXR3b3JrIjogInRjcCIsCiAgICAgICAgInNlY3VyaXR5IjogInRscyIsCiAgICAgICAgInRsc1NldHRpbmdzIjogewogICAgICAgICAgInNlcnZlck5hbWUiOiAicnUuZmVkZXJhbC11c2EuY29tIiwKICAgICAgICAgICJhbGxvd0luc2VjdXJlIjogZmFsc2UsCiAgICAgICAgICAiZmluZ2VycHJpbnQiOiAiY2hyb21lIiwKICAgICAgICAgICJhbHBuIjogWyJoMiIsICJodHRwLzEuMSJdCiAgICAgICAgfSwKICAgICAgICAic29ja29wdCI6IHsKICAgICAgICAgICJ0Y3BGYXN0T3BlbiI6IHRydWUsCiAgICAgICAgICAidGNwQ29uZ2VzdGlvbiI6ICJiYnIiLAogICAgICAgICAgInRvcyI6IDQ2CiAgICAgICAgfQogICAgICB9LAogICAgICAibXV4IjogewogICAgICAgICJlbmFibGVkIjogZmFsc2UKICAgICAgfQogICAgfSwKICAgIHsKICAgICAgInRhZyI6ICJwcm94eV9zdHJlYW0iLAogICAgICAicHJvdG9jb2wiOiAidHJvamFuIiwKICAgICAgInNldHRpbmdzIjogewogICAgICAgICJzZXJ2ZXJzIjogWwogICAgICAgICAgewogICAgICAgICAgICAiYWRkcmVzcyI6ICJydS5mZWRlcmFsLXVzYS5jb20iLAogICAgICAgICAgICAicG9ydCI6IDg0NDMsCiAgICAgICAgICAgICJwYXNzd29yZCI6ICJRZncwTXFveU5rU3ZxalJoWl94NVdOTTNWX3RGNnEiCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9LAogICAgICAic3RyZWFtU2V0dGluZ3MiOiB7CiAgICAgICAgIm5ldHdvcmsiOiAidGNwIiwKICAgICAgICAic2VjdXJpdHkiOiAidGxzIiwKICAgICAgICAidGxzU2V0dGluZ3MiOiB7CiAgICAgICAgICAic2VydmVyTmFtZSI6ICJydS5mZWRlcmFsLXVzYS5jb20iLAogICAgICAgICAgImFsbG93SW5zZWN1cmUiOiBmYWxzZSwKICAgICAgICAgICJmaW5nZXJwcmludCI6ICJjaHJvbWUiLAogICAgICAgICAgImFscG4iOiBbImgyIiwgImh0dHAvMS4xIl0KICAgICAgICB9LAogICAgICAgICJzb2Nrb3B0IjogewogICAgICAgICAgInRjcEZhc3RPcGVuIjogdHJ1ZSwKICAgICAgICAgICJ0Y3BDb25nZXN0aW9uIjogImJiciIKICAgICAgICB9CiAgICAgIH0sCiAgICAgICJtdXgiOiB7CiAgICAgICAgImVuYWJsZWQiOiBmYWxzZQogICAgICB9CiAgICB9LAogICAgewogICAgICAidGFnIjogImRpcmVjdCIsCiAgICAgICJwcm90b2NvbCI6ICJmcmVlZG9tIiwKICAgICAgInNldHRpbmdzIjogewogICAgICAgICJkb21haW5TdHJhdGVneSI6ICJBc0lzIgogICAgICB9CiAgICB9LAogICAgewogICAgICAidGFnIjogImJsb2NrIiwKICAgICAgInByb3RvY29sIjogImJsYWNraG9sZSIKICAgIH0KICBdLAogICJyZW1hcmtzIjogIvCfh7fwn4e3IEdBTUVTIHwgNEsgWVQgfCBSVVMgQllQQVNTIOKaoSIKfQ==
+{
+  "dns": {
+    "servers": [
+      "144.31.151.64",
+      "1.1.1.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "domainMatcher": "hybrid",
+    "rules": [
+      {
+        "type": "field",
+        "protocol": ["bittorrent"],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:wildberries.ru",
+          "domain:wildberries.by",
+          "domain:wildberries.kz",
+          "domain:wildberries.am",
+          "domain:wildberries.kg",
+          "domain:wildberries.uz",
+          "domain:sberbank.ru",
+          "domain:sber.ru",
+          "domain:sberbank.com",
+          "domain:ozon.ru",
+          "domain:ozon.com",
+          "domain:ozonbank.ru",
+          "domain:gosuslugi.ru",
+          "domain:esia.gosuslugi.ru",
+          "domain:lk.gosuslugi.ru",
+          "domain:gu-st.ru",
+          "domain:yandex.ru",
+          "domain:yandex.com",
+          "domain:ya.ru",
+          "domain:yandex.net",
+          "domain:kinopoisk.ru",
+          "domain:hd.kinopoisk.ru",
+          "domain:ivi.ru",
+          "domain:okko.tv",
+          "domain:more.tv",
+          "domain:start.ru",
+          "domain:premier.one",
+          "domain:megogo.ru",
+          "domain:amediateka.ru",
+          "domain:vk.com",
+          "domain:vk.ru",
+          "domain:userapi.com",
+          "domain:vk.me",
+          "domain:mail.ru",
+          "domain:list.ru",
+          "domain:inbox.ru",
+          "domain:bk.ru",
+          "domain:rambler.ru",
+          "domain:livejournal.com",
+          "domain:journal.tinkoff.ru",
+          "domain:tbank.ru",
+          "domain:tinkoff.ru",
+          "domain:avito.ru",
+          "domain:youla.ru",
+          "domain:dns-shop.ru",
+          "domain:citilink.ru",
+          "domain:mvideo.ru",
+          "domain:eldorado.ru",
+          "domain:lamoda.ru",
+          "domain:aliexpress.ru"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:category-games"
+        ],
+        "outboundTag": "proxy_games"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:youtube",
+          "geosite:telegram",
+          "geosite:netflix",
+          "geosite:spotify",
+          "geosite:discord",
+          "geosite:twitch"
+        ],
+        "outboundTag": "proxy_stream"
+      },
+      {
+        "type": "field",
+        "network": "tcp,udp",
+        "outboundTag": "proxy_stream"
+      }
+    ]
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "0.0.0.0",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": false,
+        "destOverride": ["http", "tls", "quic"]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "0.0.0.0",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": false,
+        "destOverride": ["http", "tls", "quic"]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy_games",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+          {
+            "address": "ru.federal-usa.com",
+            "port": 8443,
+            "password": "Qfw0MqoyNkSvqjRhZ_x5WNM3V_tF6q"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "ru.federal-usa.com",
+          "allowInsecure": false,
+          "fingerprint": "chrome",
+          "alpn": ["h2", "http/1.1"]
+        },
+        "sockopt": {
+          "tcpFastOpen": true,
+          "tcpCongestion": "bbr",
+          "tos": 46
+        }
+      },
+      "mux": {
+        "enabled": false
+      }
+    },
+    {
+      "tag": "proxy_stream",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+          {
+            "address": "ru.federal-usa.com",
+            "port": 8443,
+            "password": "Qfw0MqoyNkSvqjRhZ_x5WNM3V_tF6q"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "ru.federal-usa.com",
+          "allowInsecure": false,
+          "fingerprint": "chrome",
+          "alpn": ["h2", "http/1.1"]
+        },
+        "sockopt": {
+          "tcpFastOpen": true,
+          "tcpCongestion": "bbr"
+        }
+      },
+      "mux": {
+        "enabled": false
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "AsIs"
+      }
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇷🇺 GAMES | 4K YT | RUS BYPASS ⚡"
+}
