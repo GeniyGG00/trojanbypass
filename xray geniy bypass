@@ -22,19 +22,55 @@
       {
         "type": "field",
         "domain": [
-          "domain:wildberries.ru", "domain:wildberries.by", "domain:wildberries.kz", "domain:wildberries.am", "domain:wildberries.kg", "domain:wildberries.uz",
-          "domain:sberbank.ru", "domain:sber.ru", "domain:sberbank.com",
-          "domain:ozon.ru", "domain:ozon.com", "domain:ozonbank.ru",
-          "domain:gosuslugi.ru", "domain:esia.gosuslugi.ru", "domain:lk.gosuslugi.ru", "domain:gu-st.ru",
-          "domain:yandex.ru", "domain:yandex.com", "domain:ya.ru", "domain:yandex.net",
-          "domain:kinopoisk.ru", "domain:hd.kinopoisk.ru",
-          "domain:ivi.ru", "domain:okko.tv", "domain:more.tv", "domain:start.ru", "domain:premier.one", "domain:megogo.ru", "domain:amediateka.ru",
-          "domain:vk.com", "domain:vk.ru", "domain:userapi.com", "domain:vk.me",
-          "domain:mail.ru", "domain:list.ru", "domain:inbox.ru", "domain:bk.ru",
-          "domain:rambler.ru", "domain:livejournal.com",
-          "domain:journal.tinkoff.ru", "domain:tbank.ru", "domain:tinkoff.ru",
-          "domain:avito.ru", "domain:youla.ru",
-          "domain:dns-shop.ru", "domain:citilink.ru", "domain:mvideo.ru", "domain:eldorado.ru", "domain:lamoda.ru",
+          "domain:wildberries.ru",
+          "domain:wildberries.by",
+          "domain:wildberries.kz",
+          "domain:wildberries.am",
+          "domain:wildberries.kg",
+          "domain:wildberries.uz",
+          "domain:sberbank.ru",
+          "domain:sber.ru",
+          "domain:sberbank.com",
+          "domain:ozon.ru",
+          "domain:ozon.com",
+          "domain:ozonbank.ru",
+          "domain:gosuslugi.ru",
+          "domain:esia.gosuslugi.ru",
+          "domain:lk.gosuslugi.ru",
+          "domain:gu-st.ru",
+          "domain:yandex.ru",
+          "domain:yandex.com",
+          "domain:ya.ru",
+          "domain:yandex.net",
+          "domain:kinopoisk.ru",
+          "domain:hd.kinopoisk.ru",
+          "domain:ivi.ru",
+          "domain:okko.tv",
+          "domain:more.tv",
+          "domain:start.ru",
+          "domain:premier.one",
+          "domain:megogo.ru",
+          "domain:amediateka.ru",
+          "domain:vk.com",
+          "domain:vk.ru",
+          "domain:userapi.com",
+          "domain:vk.me",
+          "domain:mail.ru",
+          "domain:list.ru",
+          "domain:inbox.ru",
+          "domain:bk.ru",
+          "domain:rambler.ru",
+          "domain:livejournal.com",
+          "domain:journal.tinkoff.ru",
+          "domain:tbank.ru",
+          "domain:tinkoff.ru",
+          "domain:avito.ru",
+          "domain:youla.ru",
+          "domain:dns-shop.ru",
+          "domain:citilink.ru",
+          "domain:mvideo.ru",
+          "domain:eldorado.ru",
+          "domain:lamoda.ru",
           "domain:aliexpress.ru"
         ],
         "outboundTag": "direct"
@@ -42,18 +78,23 @@
       {
         "type": "field",
         "domain": [
-          "domain:youtube.com", "domain:youtu.be", "domain:googlevideo.com", "domain:ytimg.com",
-          "domain:telegram.org", "domain:t.me",
-          "domain:discord.com", "domain:discord.gg",
-          "domain:supercell.com", "domain:clashofclans.com", "domain:clashroyale.com", "domain:brawlstars.com",
-          "domain:netflix.com", "domain:spotify.com", "domain:twitch.tv"
+          "domain:supercell.com",
+          "domain:clashofclans.com",
+          "domain:clashroyale.com",
+          "domain:brawlstars.com",
+          "domain:youtube.com",
+          "domain:youtu.be",
+          "domain:googlevideo.com",
+          "domain:ytimg.com",
+          "domain:telegram.org",
+          "domain:t.me",
+          "domain:netflix.com",
+          "domain:spotify.com",
+          "domain:discord.com",
+          "domain:discord.gg",
+          "domain:twitch.tv"
         ],
         "outboundTag": "proxy"
-      },
-      {
-        "type": "field",
-        "ip": ["geoip:private"],
-        "outboundTag": "direct"
       },
       {
         "type": "field",
@@ -68,16 +109,29 @@
       "port": 10808,
       "listen": "0.0.0.0",
       "protocol": "socks",
-      "settings": { "udp": true, "auth": "noauth" },
-      "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": false,
+        "destOverride": ["http", "tls", "quic"]
+      }
     },
     {
       "tag": "http",
       "port": 10809,
       "listen": "0.0.0.0",
       "protocol": "http",
-      "settings": { "allowTransparent": false },
-      "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": false,
+        "destOverride": ["http", "tls", "quic"]
+      }
     }
   ],
   "outbounds": [
@@ -107,17 +161,21 @@
           "tcpCongestion": "bbr"
         }
       },
-      "mux": { "enabled": false }
+      "mux": {
+        "enabled": false
+      }
     },
     {
       "tag": "direct",
       "protocol": "freedom",
-      "settings": { "domainStrategy": "AsIs" }
+      "settings": {
+        "domainStrategy": "AsIs"
+      }
     },
     {
       "tag": "block",
       "protocol": "blackhole"
     }
   ],
-  "remarks": "🇷🇺 Game low ping | bypass | Mask vk.com | 4K YT & Games | Optimized"
+  "remarks": "🇷🇺 WORKING BUILD | No 5GB limit | Mask vk.com | 4K YT & Games | Fixed Geosite"
 }
