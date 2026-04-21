@@ -1,1 +1,206 @@
-ewogICJkbnMiOiB7CiAgICAic2VydmVycyI6IFsKICAgICAgIjE0NC4zMS4xNTEuNjQiLAogICAgICAiMS4xLjEuMSIKICAgIF0sCiAgICAicXVlcnlTdHJhdGVneSI6ICJVc2VJUCIKICB9LAogICJyb3V0aW5nIjogewogICAgImRvbWFpblN0cmF0ZWd5IjogIklQSWZOb25NYXRjaCIsCiAgICAiZG9tYWluTWF0Y2hlciI6ICJoeWJyaWQiLAogICAgInJ1bGVzIjogWwogICAgICB7CiAgICAgICAgInR5cGUiOiAiZmllbGQiLAogICAgICAgICJwcm90b2NvbCI6IFsiYml0dG9ycmVudCJdLAogICAgICAgICJvdXRib3VuZFRhZyI6ICJkaXJlY3QiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAidHlwZSI6ICJmaWVsZCIsCiAgICAgICAgImRvbWFpbiI6IFsKICAgICAgICAgICJkb21haW46d2lsZGJlcnJpZXMucnUiLAogICAgICAgICAgImRvbWFpbjp3aWxkYmVycmllcy5ieSIsCiAgICAgICAgICAiZG9tYWluOndpbGRiZXJyaWVzLmt6IiwKICAgICAgICAgICJkb21haW46d2lsZGJlcnJpZXMuYW0iLAogICAgICAgICAgImRvbWFpbjp3aWxkYmVycmllcy5rZyIsCiAgICAgICAgICAiZG9tYWluOndpbGRiZXJyaWVzLnV6IiwKICAgICAgICAgICJkb21haW46c2JlcmJhbmsucnUiLAogICAgICAgICAgImRvbWFpbjpzYmVyLnJ1IiwKICAgICAgICAgICJkb21haW46c2JlcmJhbmsuY29tIiwKICAgICAgICAgICJkb21haW46b3pvbi5ydSIsCiAgICAgICAgICAiZG9tYWluOm96b24uY29tIiwKICAgICAgICAgICJkb21haW46b3pvbmJhbmsucnUiLAogICAgICAgICAgImRvbWFpbjpnb3N1c2x1Z2kucnUiLAogICAgICAgICAgImRvbWFpbjplc2lhLmdvc3VzbHVnaS5ydSIsCiAgICAgICAgICAiZG9tYWluOmxrLmdvc3VzbHVnaS5ydSIsCiAgICAgICAgICAiZG9tYWluOmd1LXN0LnJ1IgogICAgICAgIF0sCiAgICAgICAgIm91dGJvdW5kVGFnIjogImRpcmVjdCIKICAgICAgfQogICAgXQogIH0sCiAgImluYm91bmRzIjogWwogICAgewogICAgICAidGFnIjogInNvY2tzIiwKICAgICAgInBvcnQiOiAxMDgwOCwKICAgICAgImxpc3RlbiI6ICIwLjAuMC4wIiwKICAgICAgInByb3RvY29sIjogInNvY2tzIiwKICAgICAgInNldHRpbmdzIjogewogICAgICAgICJ1ZHAiOiB0cnVlLAogICAgICAgICJhdXRoIjogIm5vYXV0aCIKICAgICAgfSwKICAgICAgInNuaWZmaW5nIjogewogICAgICAgICJlbmFibGVkIjogdHJ1ZSwKICAgICAgICAicm91dGVPbmx5IjogZmFsc2UsCiAgICAgICAgImRlc3RPdmVycmlkZSI6IFsiaHR0cCIsICJ0bHMiLCAicXVpYyJdCiAgICAgIH0KICAgIH0sCiAgICB7CiAgICAgICJ0YWciOiAiaHR0cCIsCiAgICAgICJwb3J0IjogMTA4MDksCiAgICAgICJsaXN0ZW4iOiAiMC4wLjAuMCIsCiAgICAgICJwcm90b2NvbCI6ICJodHRwIiwKICAgICAgInNldHRpbmdzIjogewogICAgICAgICJhbGxvd1RyYW5zcGFyZW50IjogZmFsc2UKICAgICAgfSwKICAgICAgInNuaWZmaW5nIjogewogICAgICAgICJlbmFibGVkIjogdHJ1ZSwKICAgICAgICAicm91dGVPbmx5IjogZmFsc2UsCiAgICAgICAgImRlc3RPdmVycmlkZSI6IFsiaHR0cCIsICJ0bHMiLCAicXVpYyJdCiAgICAgIH0KICAgIH0KICBdLAogICJvdXRib3VuZHMiOiBbCiAgICB7CiAgICAgICJ0YWciOiAicHJveHlfbG93X3BpbmciLAogICAgICAicHJvdG9jb2wiOiAidmxlc3MiLAogICAgICAic2V0dGluZ3MiOiB7CiAgICAgICAgInZuZXh0IjogWwogICAgICAgICAgewogICAgICAgICAgICAiYWRkcmVzcyI6ICJkZTMuemlqaWdvZ28ubXkuaWQiLAogICAgICAgICAgICAicG9ydCI6IDQ0MywKICAgICAgICAgICAgInVzZXJzIjogWwogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJpZCI6ICIxNTYwYzY1YS01ZTMwLTQzYzQtYTlmNi1kNTk4ZWEyMDJjYzQiLAogICAgICAgICAgICAgICAgImZsb3ciOiAieHRscy1ycHJ4LXZpc2lvbi11ZHA0NDMiLAogICAgICAgICAgICAgICAgImVuY3J5cHRpb24iOiAibm9uZSIKICAgICAgICAgICAgICB9CiAgICAgICAgICAgIF0KICAgICAgICAgIH0KICAgICAgICBdCiAgICAgIH0sCiAgICAgICJzdHJlYW1TZXR0aW5ncyI6IHsKICAgICAgICAibmV0d29yayI6ICJ0Y3AiLAogICAgICAgICJzZWN1cml0eSI6ICJyZWFsaXR5IiwKICAgICAgICAicmVhbGl0eVNldHRpbmdzIjogewogICAgICAgICAgInNob3ciOiBmYWxzZSwKICAgICAgICAgICJkZXN0IjogImRpc2NvcmQuY29tOjQ0MyIsCiAgICAgICAgICAic2VydmVyTmFtZXMiOiBbCiAgICAgICAgICAgICJkaXNjb3JkLmNvbSIsCiAgICAgICAgICAgICJjZG4uZGlzY29yZGFwcC5jb20iCiAgICAgICAgICBdLAogICAgICAgICAgInByaXZhdGVLZXkiOiAiQ09PSnZiWDI5LWZWM2hfZTVsQW1CaXZFU3pBekgzNG5xRjhCUUNnM3MxcyIsCiAgICAgICAgICAic2hvcnRJZHMiOiBbCiAgICAgICAgICAgICI2MDRlNDM5NCIKICAgICAgICAgIF0sCiAgICAgICAgICAiZmluZ2VycHJpbnQiOiAiY2hyb21lIgogICAgICAgIH0sCiAgICAgICAgInNvY2tvcHQiOiB7CiAgICAgICAgICAidGNwRmFzdE9wZW4iOiB0cnVlLAogICAgICAgICAgInRjcENvbmdlc3Rpb24iOiAiYmJyIiwKICAgICAgICAgICJ0b3MiOiA0NgogICAgICAgIH0KICAgICAgfSwKICAgICAgIm11eCI6IHsKICAgICAgICAiZW5hYmxlZCI6IGZhbHNlCiAgICAgIH0KICAgIH0sCiAgICB7CiAgICAgICJ0YWciOiAicHJveHlfaGlnaF9zcGVlZCIsCiAgICAgICJwcm90b2NvbCI6ICJ2bGVzcyIsCiAgICAgICJzZXR0aW5ncyI6IHsKICAgICAgICAidm5leHQiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJhZGRyZXNzIjogImRlMy56aWppZ29nby5teS5pZCIsCiAgICAgICAgICAgICJwb3J0IjogNDQzLAogICAgICAgICAgICAidXNlcnMiOiBbCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgImlkIjogIjE1NjBjNjVhLTVlMzAtNDNjNC1hOWY2LWQ1OThlYTIwMmNjNCIsCiAgICAgICAgICAgICAgICAiZmxvdyI6ICJ4dGxzLXJwcngtdmlzaW9uIiwKICAgICAgICAgICAgICAgICJlbmNyeXB0aW9uIjogIm5vbmUiCiAgICAgICAgICAgICAgfQogICAgICAgICAgICBdCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9LAogICAgICAic3RyZWFtU2V0dGluZ3MiOiB7CiAgICAgICAgIm5ldHdvcmsiOiAidGNwIiwKICAgICAgICAic2VjdXJpdHkiOiAicmVhbGl0eSIsCiAgICAgICAgInJlYWxpdHlTZXR0aW5ncyI6IHsKICAgICAgICAgICJzaG93IjogZmFsc2UsCiAgICAgICAgICAiZGVzdCI6ICJkaXNjb3JkLmNvbTo0NDMiLAogICAgICAgICAgInNlcnZlck5hbWVzIjogWwogICAgICAgICAgICAiZGlzY29yZC5jb20iLAogICAgICAgICAgICAiY2RuLmRpc2NvcmRhcHAuY29tIgogICAgICAgICAgXSwKICAgICAgICAgICJwcml2YXRlS2V5IjogIkNPT0p2YlgyOS1mVjNoX2U1bEFtQml2RVN6QXpIMzRucUY4QlFDZzNzMXMiLAogICAgICAgICAgInNob3J0SWRzIjogWwogICAgICAgICAgICAiNjA0ZTQzOTQiCiAgICAgICAgICBdLAogICAgICAgICAgImZpbmdlcnByaW50IjogImNocm9tZSIKICAgICAgICB9LAogICAgICAgICJzb2Nrb3B0IjogewogICAgICAgICAgInRjcEZhc3RPcGVuIjogdHJ1ZSwKICAgICAgICAgICJ0Y3BDb25nZXN0aW9uIjogImJiciIKICAgICAgICB9CiAgICAgIH0sCiAgICAgICJtdXgiOiB7CiAgICAgICAgImVuYWJsZWQiOiBmYWxzZQogICAgICB9CiAgICB9LAogICAgewogICAgICAidGFnIjogImRpcmVjdCIsCiAgICAgICJwcm90b2NvbCI6ICJmcmVlZG9tIiwKICAgICAgInNldHRpbmdzIjogewogICAgICAgICJkb21haW5TdHJhdGVneSI6ICJBc0lzIgogICAgICB9LAogICAgICAic3RyZWFtU2V0dGluZ3MiOiB7CiAgICAgICAgInNvY2tvcHQiOiB7CiAgICAgICAgICAidG9zIjogMAogICAgICAgIH0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgInRhZyI6ICJibG9jayIsCiAgICAgICJwcm90b2NvbCI6ICJibGFja2hvbGUiCiAgICB9CiAgXSwKICAicmVtYXJrcyI6ICLwn4ep8J+HqiBHZXJtYW55IHwgR2FtZXMgJiA0SyBZb3VUdWJlIChQdWJsaWMgU2VydmVyKSIKfQ==
+{
+  "dns": {
+    "servers": [
+      "144.31.151.64",
+      "1.1.1.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "domainMatcher": "hybrid",
+    "rules": [
+      {
+        "type": "field",
+        "protocol": ["bittorrent"],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:wildberries.ru",
+          "domain:wildberries.by",
+          "domain:wildberries.kz",
+          "domain:wildberries.am",
+          "domain:wildberries.kg",
+          "domain:wildberries.uz",
+          "domain:sberbank.ru",
+          "domain:sber.ru",
+          "domain:sberbank.com",
+          "domain:ozon.ru",
+          "domain:ozon.com",
+          "domain:ozonbank.ru",
+          "domain:gosuslugi.ru",
+          "domain:esia.gosuslugi.ru",
+          "domain:lk.gosuslugi.ru",
+          "domain:gu-st.ru",
+          "domain:yandex.ru",
+          "domain:yandex.com",
+          "domain:ya.ru",
+          "domain:yandex.net",
+          "domain:kinopoisk.ru",
+          "domain:hd.kinopoisk.ru",
+          "domain:ivi.ru",
+          "domain:okko.tv",
+          "domain:more.tv",
+          "domain:start.ru",
+          "domain:premier.one",
+          "domain:megogo.ru",
+          "domain:amediateka.ru",
+          "domain:vk.com",
+          "domain:vk.ru",
+          "domain:userapi.com",
+          "domain:vk.me",
+          "domain:mail.ru",
+          "domain:list.ru",
+          "domain:inbox.ru",
+          "domain:bk.ru",
+          "domain:rambler.ru",
+          "domain:livejournal.com",
+          "domain:journal.tinkoff.ru",
+          "domain:tbank.ru",
+          "domain:tinkoff.ru",
+          "domain:avito.ru",
+          "domain:youla.ru",
+          "domain:dns-shop.ru",
+          "domain:citilink.ru",
+          "domain:mvideo.ru",
+          "domain:eldorado.ru",
+          "domain:lamoda.ru",
+          "domain:aliexpress.ru"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:category-games"
+        ],
+        "outboundTag": "proxy_games"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:youtube",
+          "geosite:telegram",
+          "geosite:netflix",
+          "geosite:spotify",
+          "geosite:discord",
+          "geosite:twitch"
+        ],
+        "outboundTag": "proxy_stream"
+      },
+      {
+        "type": "field",
+        "network": "tcp,udp",
+        "outboundTag": "proxy_stream"
+      }
+    ]
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "0.0.0.0",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": false,
+        "destOverride": ["http", "tls", "quic"]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "0.0.0.0",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": false,
+        "destOverride": ["http", "tls", "quic"]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy_games",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+          {
+            "address": "ru.federal-usa.com",
+            "port": 8443,
+            "password": "Qfw0MqoyNkSvqjRhZ_x5WNM3V_tF6q"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "ru.federal-usa.com",
+          "allowInsecure": false,
+          "fingerprint": "chrome",
+          "alpn": ["h2", "http/1.1"]
+        },
+        "sockopt": {
+          "tcpFastOpen": true,
+          "tcpCongestion": "bbr",
+          "tos": 46
+        }
+      },
+      "mux": {
+        "enabled": false
+      }
+    },
+    {
+      "tag": "proxy_stream",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+          {
+            "address": "ru.federal-usa.com",
+            "port": 8443,
+            "password": "Qfw0MqoyNkSvqjRhZ_x5WNM3V_tF6q"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "ru.federal-usa.com",
+          "allowInsecure": false,
+          "fingerprint": "chrome",
+          "alpn": ["h2", "http/1.1"]
+        },
+        "sockopt": {
+          "tcpFastOpen": true,
+          "tcpCongestion": "bbr"
+        }
+      },
+      "mux": {
+        "enabled": false
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "AsIs"
+      }
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇷🇺 GAMES | 4K YT | RUS BYPASS ⚡"
+}
