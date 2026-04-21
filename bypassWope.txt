@@ -7,39 +7,31 @@
     "queryStrategy": "UseIP"
   },
   "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "domainMatcher": "hybrid",
     "rules": [
       {
         "type": "field",
-        "protocol": [
-          "bittorrent"
-        ],
+        "protocol": ["bittorrent"],
         "outboundTag": "direct"
       },
       {
         "type": "field",
         "domain": [
-          "apple-cloudkit.com",
-          "apple.co",
           "apple.com",
-          "apple.news",
-          "apple.com.cn",
-          "cdn-apple.com",
-          "push.apple.com",
-          "push-apple.com.akadns.net",
-          "api.push.apple.com",
-          "mtalk.google.com"
+          "icloud.com",
+          "itunes.com",
+          "push.apple.com"
         ],
         "outboundTag": "direct"
       }
-    ],
-    "domainMatcher": "hybrid",
-    "domainStrategy": "IPIfNonMatch"
+    ]
   },
   "inbounds": [
     {
       "tag": "socks",
       "port": 10808,
-      "listen": "0.0.0.0",
+      "listen": "127.0.0.1",
       "protocol": "socks",
       "settings": {
         "udp": true,
@@ -47,30 +39,19 @@
       },
       "sniffing": {
         "enabled": true,
-        "routeOnly": false,
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ]
+        "destOverride": ["http", "tls", "quic"],
+        "routeOnly": false
       }
     },
     {
       "tag": "http",
       "port": 10809,
-      "listen": "0.0.0.0",
+      "listen": "127.0.0.1",
       "protocol": "http",
-      "settings": {
-        "allowTransparent": false
-      },
       "sniffing": {
         "enabled": true,
-        "routeOnly": false,
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ]
+        "destOverride": ["http", "tls", "quic"],
+        "routeOnly": false
       }
     }
   ],
@@ -89,29 +70,30 @@
       },
       "streamSettings": {
         "network": "tcp",
-        "tcpSettings": {},
         "security": "tls",
         "tlsSettings": {
           "serverName": "ru.federal-usa.com",
           "allowInsecure": false,
-          "show": false,
-          "fingerprint": "qq",
-          "alpn": [
-            "h3",
-            "h2",
-            "http/1.1"
-          ]
+          "fingerprint": "chrome",
+          "alpn": ["h2", "http/1.1"]
         }
+      },
+      "mux": {
+        "enabled": true,
+        "concurrency": 8
       }
     },
     {
       "tag": "direct",
-      "protocol": "freedom"
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "AsIs"
+      }
     },
     {
       "tag": "block",
       "protocol": "blackhole"
     }
   ],
-  "remarks": "🇷🇺BypassFull | (20 Гбит/c GAMES-Trojan⚡)"
+  "remarks": "🇷🇺 Russia Trojan | 20 Gbit/s"
 }
