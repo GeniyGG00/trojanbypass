@@ -1,0 +1,174 @@
+{
+  "dns": {
+    "servers": [
+      {
+        "address": "1.1.1.1",
+        "domains": [
+          "domain:supercell.com",
+          "geosite:supercell",
+          "geosite:category-games"
+        ]
+      },
+      {
+        "address": "https://dns.google/dns-query",
+        "tag": "google"
+      },
+      "144.31.151.64"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "domainMatcher": "hybrid",
+    "rules": [
+      {
+        "type": "field",
+        "protocol": ["bittorrent"],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:wildberries.ru",
+          "domain:wildberries.by",
+          "domain:sberbank.ru",
+          "domain:gosuslugi.ru",
+          "domain:yandex.ru",
+          "domain:vk.com",
+          "domain:mail.ru",
+          "domain:avito.ru",
+          "domain:ozon.ru"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:supercell"
+        ],
+        "outboundTag": "proxy_games"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:youtube",
+          "geosite:telegram",
+          "geosite:netflix",
+          "geosite:discord",
+          "geosite:twitch"
+        ],
+        "outboundTag": "proxy_stream"
+      },
+      {
+        "type": "field",
+        "network": "tcp,udp",
+        "outboundTag": "proxy_stream"
+      }
+    ]
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "0.0.0.0",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": false,
+        "destOverride": ["http", "tls", "quic"]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "0.0.0.0",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": false,
+        "destOverride": ["http", "tls", "quic"]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy_games",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "YOUR_GAME_VPS_IP",
+            "port": 443,
+            "users": [
+              {
+                "id": "YOUR_GAME_UUID",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "fingerprint": "chrome",
+          "serverName": "www.microsoft.com",
+          "publicKey": "YOUR_GAME_PUBLIC_KEY",
+          "shortId": "6ba85179e30d4fc2",
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "proxy_stream",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "YOUR_STREAM_VPS_IP",
+            "port": 443,
+            "users": [
+              {
+                "id": "YOUR_STREAM_UUID",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "fingerprint": "chrome",
+          "serverName": "www.apple.com",
+          "publicKey": "YOUR_STREAM_PUBLIC_KEY",
+          "shortId": "6ba85179e30d4fc2",
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "AsIs"
+      }
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇷🇺 SUPERCELL OPTIMIZED | VLESS REALITY ⚡"
+}
