@@ -5,12 +5,14 @@
       "111.88.96.51",
       "1.1.1.1",
       "1.0.0.1",
+      "144.31.151.64",
       "localhost"
     ],
     "queryStrategy": "UseIP"
   },
   "routing": {
     "domainStrategy": "IPIfNonMatch",
+    "domainMatcher": "hybrid",
     "rules": [
       {
         "type": "field",
@@ -20,57 +22,43 @@
       {
         "type": "field",
         "domain": [
-          "domain:wildberries.ru",
-          "domain:wildberries.by",
-          "domain:wildberries.kz",
-          "domain:wildberries.am",
-          "domain:wildberries.kg",
-          "domain:wildberries.uz",
-          "domain:sberbank.ru",
-          "domain:sber.ru",
-          "domain:sberbank.com",
-          "domain:ozon.ru",
-          "domain:ozon.com",
-          "domain:ozonbank.ru",
-          "domain:gosuslugi.ru",
-          "domain:esia.gosuslugi.ru",
-          "domain:lk.gosuslugi.ru",
-          "domain:gu-st.ru",
-          "domain:ya.ru",
-          "domain:yandex.ru",
-          "domain:mail.ru",
-          "domain:4pda.to",
-          "domain:habr.com",
-          "domain:film.ru",
-          "domain:accounts.google.com",
-          "domain:gemini.google.com"
+          "domain:wildberries.ru", "domain:wildberries.by", "domain:wildberries.kz", "domain:wildberries.am", "domain:wildberries.kg", "domain:wildberries.uz",
+          "domain:sberbank.ru", "domain:sber.ru", "domain:sberbank.com",
+          "domain:ozon.ru", "domain:ozon.com", "domain:ozonbank.ru",
+          "domain:gosuslugi.ru", "domain:esia.gosuslugi.ru", "domain:lk.gosuslugi.ru", "domain:gu-st.ru",
+          "domain:yandex.ru", "domain:yandex.com", "domain:ya.ru", "domain:yandex.net",
+          "domain:kinopoisk.ru", "domain:hd.kinopoisk.ru",
+          "domain:ivi.ru", "domain:okko.tv", "domain:more.tv", "domain:start.ru", "domain:premier.one", "domain:megogo.ru", "domain:amediateka.ru",
+          "domain:vk.com", "domain:vk.ru", "domain:userapi.com", "domain:vk.me",
+          "domain:mail.ru", "domain:list.ru", "domain:inbox.ru", "domain:bk.ru",
+          "domain:rambler.ru", "domain:livejournal.com",
+          "domain:journal.tinkoff.ru", "domain:tbank.ru", "domain:tinkoff.ru",
+          "domain:avito.ru", "domain:youla.ru",
+          "domain:dns-shop.ru", "domain:citilink.ru", "domain:mvideo.ru", "domain:eldorado.ru", "domain:lamoda.ru",
+          "domain:aliexpress.ru"
         ],
         "outboundTag": "direct"
       },
       {
         "type": "field",
         "domain": [
-          "domain:youtube.com",
-          "domain:youtu.be",
-          "domain:googlevideo.com",
-          "domain:ytimg.com",
-          "domain:telegram.org",
-          "domain:t.me",
-          "domain:discord.com",
-          "domain:discord.gg",
-          "domain:supercell.com",
-          "domain:clashofclans.com",
-          "domain:clashroyale.com",
-          "domain:brawlstars.com"
+          "domain:youtube.com", "domain:youtu.be", "domain:googlevideo.com", "domain:ytimg.com",
+          "domain:telegram.org", "domain:t.me",
+          "domain:discord.com", "domain:discord.gg",
+          "domain:supercell.com", "domain:clashofclans.com", "domain:clashroyale.com", "domain:brawlstars.com",
+          "domain:netflix.com", "domain:spotify.com", "domain:twitch.tv"
         ],
-        "outboundTag": "proxy_high_speed"
+        "outboundTag": "proxy"
       },
       {
         "type": "field",
-        "ip": [
-          "geoip:private"
-        ],
+        "ip": ["geoip:private"],
         "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "network": "tcp,udp",
+        "outboundTag": "proxy"
       }
     ]
   },
@@ -80,70 +68,56 @@
       "port": 10808,
       "listen": "0.0.0.0",
       "protocol": "socks",
-      "settings": {
-        "udp": true,
-        "auth": "noauth"
-      }
+      "settings": { "udp": true, "auth": "noauth" },
+      "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
     },
     {
       "tag": "http",
       "port": 10809,
       "listen": "0.0.0.0",
-      "protocol": "http"
+      "protocol": "http",
+      "settings": { "allowTransparent": false },
+      "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
     }
   ],
   "outbounds": [
     {
-      "tag": "proxy_high_speed",
-      "protocol": "vless",
+      "tag": "proxy",
+      "protocol": "trojan",
       "settings": {
-        "vnext": [
+        "servers": [
           {
-            "address": "77.233.222.214",
-            "port": 3443,
-            "users": [
-              {
-                "id": "b274a762-94c5-4407-90ef-38873e5d80bc",
-                "flow": "xtls-rprx-vision",
-                "encryption": "none"
-              }
-            ]
+            "address": "ru.federal-usa.com",
+            "port": 8443,
+            "password": "Qfw0MqoyNkSvqjRhZ_x5WNM3V_tF6q"
           }
         ]
       },
       "streamSettings": {
         "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "show": false,
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "vk.com",
+          "allowInsecure": false,
           "fingerprint": "chrome",
-          "serverName": "yandex.com",
-          "publicKey": "RX-uBAptg_BSN8XKjup6dhca_2A0L6Cx64iR1V8_s20",
-          "shortId": "7a3f9e2b1c8d4f6a",
-          "spiderX": "/"
+          "alpn": ["h2", "http/1.1"]
         },
         "sockopt": {
           "tcpFastOpen": true,
-          "tcpKeepAlive": true,
-          "tcpKeepAliveInterval": 30,
           "tcpCongestion": "bbr"
         }
       },
-      "mux": {
-        "enabled": false
-      }
+      "mux": { "enabled": false }
     },
     {
       "tag": "direct",
       "protocol": "freedom",
-      "settings": {
-        "domainStrategy": "AsIs"
-      }
+      "settings": { "domainStrategy": "AsIs" }
     },
     {
       "tag": "block",
       "protocol": "blackhole"
     }
   ],
-  "remarks": "🇷🇺 Optimized Config | No Geosite Dependency"
+  "remarks": "🇷🇺 Game low ping | bypass | Mask vk.com | 4K YT & Games | Optimized"
 }
