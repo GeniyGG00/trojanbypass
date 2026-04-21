@@ -1,1 +1,116 @@
-ewogICJkbnMiOiB7CiAgICAic2VydmVycyI6IFsKICAgICAgIjE0NC4zMS4xNTEuNjQiLAogICAgICAiMS4xLjEuMSIKICAgIF0sCiAgICAicXVlcnlTdHJhdGVneSI6ICJVc2VJUCIKICB9LAogICJyb3V0aW5nIjogewogICAgImRvbWFpblN0cmF0ZWd5IjogIklQSWZOb25NYXRjaCIsCiAgICAiZG9tYWluTWF0Y2hlciI6ICJoeWJyaWQiLAogICAgInJ1bGVzIjogWwogICAgICB7CiAgICAgICAgInR5cGUiOiAiZmllbGQiLAogICAgICAgICJwcm90b2NvbCI6IFsiYml0dG9ycmVudCJdLAogICAgICAgICJvdXRib3VuZFRhZyI6ICJkaXJlY3QiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAidHlwZSI6ICJmaWVsZCIsCiAgICAgICAgImRvbWFpbiI6IFsKICAgICAgICAgICJkb21haW46d2lsZGJlcnJpZXMucnUiLAogICAgICAgICAgImRvbWFpbjp3aWxkYmVycmllcy5ieSIsCiAgICAgICAgICAiZG9tYWluOndpbGRiZXJyaWVzLmt6IiwKICAgICAgICAgICJkb21haW46d2lsZGJlcnJpZXMuYW0iLAogICAgICAgICAgImRvbWFpbjp3aWxkYmVycmllcy5rZyIsCiAgICAgICAgICAiZG9tYWluOndpbGRiZXJyaWVzLnV6IiwKICAgICAgICAgICJkb21haW46c2JlcmJhbmsucnUiLAogICAgICAgICAgImRvbWFpbjpzYmVyLnJ1IiwKICAgICAgICAgICJkb21haW46c2JlcmJhbmsuY29tIiwKICAgICAgICAgICJkb21haW46b3pvbi5ydSIsCiAgICAgICAgICAiZG9tYWluOm96b24uY29tIiwKICAgICAgICAgICJkb21haW46b3pvbmJhbmsucnUiLAogICAgICAgICAgImRvbWFpbjpnb3N1c2x1Z2kucnUiLAogICAgICAgICAgImRvbWFpbjplc2lhLmdvc3VzbHVnaS5ydSIsCiAgICAgICAgICAiZG9tYWluOmxrLmdvc3VzbHVnaS5ydSIsCiAgICAgICAgICAiZG9tYWluOmd1LXN0LnJ1IgogICAgICAgIF0sCiAgICAgICAgIm91dGJvdW5kVGFnIjogImRpcmVjdCIKICAgICAgfQogICAgXQogIH0sCiAgImluYm91bmRzIjogWwogICAgewogICAgICAidGFnIjogInNvY2tzIiwKICAgICAgInBvcnQiOiAxMDgwOCwKICAgICAgImxpc3RlbiI6ICIwLjAuMC4wIiwKICAgICAgInByb3RvY29sIjogInNvY2tzIiwKICAgICAgInNldHRpbmdzIjogewogICAgICAgICJ1ZHAiOiB0cnVlLAogICAgICAgICJhdXRoIjogIm5vYXV0aCIKICAgICAgfSwKICAgICAgInNuaWZmaW5nIjogewogICAgICAgICJlbmFibGVkIjogdHJ1ZSwKICAgICAgICAicm91dGVPbmx5IjogZmFsc2UsCiAgICAgICAgImRlc3RPdmVycmlkZSI6IFsiaHR0cCIsICJ0bHMiLCAicXVpYyJdCiAgICAgIH0KICAgIH0sCiAgICB7CiAgICAgICJ0YWciOiAiaHR0cCIsCiAgICAgICJwb3J0IjogMTA4MDksCiAgICAgICJsaXN0ZW4iOiAiMC4wLjAuMCIsCiAgICAgICJwcm90b2NvbCI6ICJodHRwIiwKICAgICAgInNldHRpbmdzIjogewogICAgICAgICJhbGxvd1RyYW5zcGFyZW50IjogZmFsc2UKICAgICAgfSwKICAgICAgInNuaWZmaW5nIjogewogICAgICAgICJlbmFibGVkIjogdHJ1ZSwKICAgICAgICAicm91dGVPbmx5IjogZmFsc2UsCiAgICAgICAgImRlc3RPdmVycmlkZSI6IFsiaHR0cCIsICJ0bHMiLCAicXVpYyJdCiAgICAgIH0KICAgIH0KICBdLAogICJvdXRib3VuZHMiOiBbCiAgICB7CiAgICAgICJ0YWciOiAicHJveHkiLAogICAgICAicHJvdG9jb2wiOiAidHJvamFuIiwKICAgICAgInNldHRpbmdzIjogewogICAgICAgICJzZXJ2ZXJzIjogWwogICAgICAgICAgewogICAgICAgICAgICAiYWRkcmVzcyI6ICJydS5mZWRlcmFsLXVzYS5jb20iLAogICAgICAgICAgICAicG9ydCI6IDg0NDMsCiAgICAgICAgICAgICJwYXNzd29yZCI6ICJRZncwTXFveU5rU3ZxalJoWl94NVdOTTNWX3RGNnEiCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9LAogICAgICAic3RyZWFtU2V0dGluZ3MiOiB7CiAgICAgICAgIm5ldHdvcmsiOiAidGNwIiwKICAgICAgICAic2VjdXJpdHkiOiAidGxzIiwKICAgICAgICAidGxzU2V0dGluZ3MiOiB7CiAgICAgICAgICAic2VydmVyTmFtZSI6ICJydS5mZWRlcmFsLXVzYS5jb20iLAogICAgICAgICAgImFsbG93SW5zZWN1cmUiOiBmYWxzZSwKICAgICAgICAgICJmaW5nZXJwcmludCI6ICJjaHJvbWUiLAogICAgICAgICAgImFscG4iOiBbImgyIiwgImh0dHAvMS4xIl0KICAgICAgICB9LAogICAgICAgICJzb2Nrb3B0IjogewogICAgICAgICAgInRjcEtlZXBBbGl2ZSI6IHRydWUsCiAgICAgICAgICAidGNwS2VlcEFsaXZlSWRsZSI6IDYwLAogICAgICAgICAgInRjcEtlZXBBbGl2ZUludGVydmFsIjogMzAsCiAgICAgICAgICAidGNwRmFzdE9wZW4iOiB0cnVlCiAgICAgICAgfQogICAgICB9LAogICAgICAibXV4IjogewogICAgICAgICJlbmFibGVkIjogdHJ1ZSwKICAgICAgICAiY29uY3VycmVuY3kiOiA0CiAgICAgIH0KICAgIH0sCiAgICB7CiAgICAgICJ0YWciOiAiZGlyZWN0IiwKICAgICAgInByb3RvY29sIjogImZyZWVkb20iLAogICAgICAic2V0dGluZ3MiOiB7CiAgICAgICAgImRvbWFpblN0cmF0ZWd5IjogIkFzSXMiCiAgICAgIH0KICAgIH0sCiAgICB7CiAgICAgICJ0YWciOiAiYmxvY2siLAogICAgICAicHJvdG9jb2wiOiAiYmxhY2tob2xlIgogICAgfQogIF0sCiAgInJlbWFya3MiOiAi8J+Ht/Cfh7cgUnVzc2lhIFRyb2phbiB8IDIwIEdiaXQvcyIKfQ==
+{
+  "dns": {
+    "servers": [
+      "1.1.1.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "domainMatcher": "hybrid",
+    "rules": [
+      {
+        "type": "field",
+        "protocol": ["bittorrent"],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:wildberries.ru",
+          "domain:wildberries.by",
+          "domain:wildberries.kz",
+          "domain:wildberries.am",
+          "domain:wildberries.kg",
+          "domain:wildberries.uz",
+          "domain:sberbank.ru",
+          "domain:sber.ru",
+          "domain:sberbank.com",
+          "domain:ozon.ru",
+          "domain:ozon.com",
+          "domain:ozonbank.ru",
+          "domain:gosuslugi.ru",
+          "domain:esia.gosuslugi.ru",
+          "domain:lk.gosuslugi.ru",
+          "domain:gu-st.ru"
+        ],
+        "outboundTag": "direct"
+      }
+    ]
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "0.0.0.0",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": false,
+        "destOverride": ["http", "tls", "quic"]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "0.0.0.0",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": false,
+        "destOverride": ["http", "tls", "quic"]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+          {
+            "address": "ru.federal-usa.com",
+            "port": 8443,
+            "password": "Qfw0MqoyNkSvqjRhZ_x5WNM3V_tF6q"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "ru.federal-usa.com",
+          "allowInsecure": false,
+          "fingerprint": "chrome",
+          "alpn": ["h2", "http/1.1"]
+        },
+        "sockopt": {
+          "tcpFastOpen": true,
+          "tcpCongestion": "bbr"
+        }
+      },
+      "mux": {
+        "enabled": false
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "AsIs"
+      }
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇷🇺 Low Ping | Games & YouTube"
+}
