@@ -2,7 +2,6 @@
   "dns": {
     "servers": [
       "144.31.151.64",
-      "111.88.96.51",
       "1.1.1.1",
       "1.0.0.1",
       "localhost"
@@ -138,5 +137,5 @@
       "protocol": "blackhole"
     }
   ],
-  "remarks": "🇷🇺 FULL OPTIMIZED BUILD | Mask vk.com | BBR + FastOpen + KeepAlive | No 5GB limit"
+  "remarks": "🇷🇺 FULL OPTIMIZED BYPASS"
 }
