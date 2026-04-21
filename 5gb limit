@@ -1,0 +1,255 @@
+{
+  "dns": {
+    "servers": [
+      {
+        "address": "https://dns.astracat.ru/dns-query",
+        "domains": [
+          "geosite:category-ru",
+          "geosite:ru-available-only-inside",
+          "domain:ozon.ru",
+          "domain:wildberries.ru",
+          "domain:sberbank.ru",
+          "domain:gosuslugi.ru"
+        ],
+        "skipFallback": false
+      },
+      {
+        "address": "https://dns.google/dns-query",
+        "domains": [
+          "geosite:!RU"
+        ]
+      },
+      "111.88.96.51",
+      "1.1.1.1",
+      "1.0.0.1",
+      "144.31.151.64",
+      "localhost"
+    ],
+    "queryStrategy": "UseIPv4",
+    "disableCache": false,
+    "tag": "dns"
+  },
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "domainMatcher": "hybrid",
+    "rules": [
+      {
+        "type": "field",
+        "inboundTag": ["dns-in"],
+        "outboundTag": "dns"
+      },
+      {
+        "type": "field",
+        "protocol": ["bittorrent"],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:category-ru",
+          "domain:wildberries.ru",
+          "domain:wildberries.by",
+          "domain:wildberries.kz",
+          "domain:wildberries.am",
+          "domain:wildberries.kg",
+          "domain:wildberries.uz",
+          "domain:sberbank.ru",
+          "domain:sber.ru",
+          "domain:sberbank.com",
+          "domain:ozon.ru",
+          "domain:ozon.com",
+          "domain:ozonbank.ru",
+          "domain:gosuslugi.ru",
+          "domain:esia.gosuslugi.ru",
+          "domain:lk.gosuslugi.ru",
+          "domain:gu-st.ru",
+          "domain:ya.ru",
+          "domain:yandex.ru",
+          "domain:mail.ru"
+        ],
+        "ip": [
+          "geoip:ru"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:supercell"
+        ],
+        "outboundTag": "proxy_low_ping"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "app.4pda.to",
+          "domain:4pda.to",
+          "4pda.ws",
+          "domain:habr.com",
+          "geosite:category-media-ru",
+          "accounts.google.com",
+          "film.ru",
+          "gemini.google.com",
+          "geosite:youtube",
+          "geosite:telegram",
+          "geosite:discord",
+          "geosite:google"
+        ],
+        "outboundTag": "proxy_high_speed"
+      },
+      {
+        "type": "field",
+        "ip": [
+          "geoip:!RU"
+        ],
+        "outboundTag": "proxy_high_speed"
+      }
+    ]
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "0.0.0.0",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": false,
+        "destOverride": ["http", "tls", "quic"]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "0.0.0.0",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": false,
+        "destOverride": ["http", "tls", "quic"]
+      }
+    },
+    {
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "port": 5353,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "1.1.1.1",
+        "port": 53,
+        "network": "udp,tcp"
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy_low_ping",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "77.233.222.214",
+            "port": 3443,
+            "users": [
+              {
+                "id": "b274a762-94c5-4407-90ef-38873e5d80bc",
+                "flow": "xtls-rprx-vision",
+                "encryption": "none"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "show": false,
+          "fingerprint": "chrome",
+          "serverName": "yandex.com",
+          "publicKey": "RX-uBAptg_BSN8XKjup6dhca_2A0L6Cx64iR1V8_s20",
+          "shortId": "7a3f9e2b1c8d4f6a",
+          "spiderX": "/"
+        },
+        "sockopt": {
+          "tcpFastOpen": true,
+          "tcpKeepAlive": true,
+          "tcpKeepAliveInterval": 30,
+          "tcpCongestion": "bbr",
+          "tos": 46
+        }
+      },
+      "mux": {
+        "enabled": false
+      }
+    },
+    {
+      "tag": "proxy_high_speed",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "77.233.222.214",
+            "port": 3443,
+            "users": [
+              {
+                "id": "b274a762-94c5-4407-90ef-38873e5d80bc",
+                "flow": "xtls-rprx-vision",
+                "encryption": "none"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "show": false,
+          "fingerprint": "chrome",
+          "serverName": "yandex.com",
+          "publicKey": "RX-uBAptg_BSN8XKjup6dhca_2A0L6Cx64iR1V8_s20",
+          "shortId": "7a3f9e2b1c8d4f6a",
+          "spiderX": "/"
+        },
+        "sockopt": {
+          "tcpFastOpen": true,
+          "tcpKeepAlive": true,
+          "tcpKeepAliveInterval": 30,
+          "tcpCongestion": "bbr"
+        }
+      },
+      "mux": {
+        "enabled": false
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "AsIs"
+      },
+      "streamSettings": {
+        "sockopt": {
+          "tos": 0
+        }
+      }
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    },
+    {
+      "tag": "dns",
+      "protocol": "dns"
+    }
+  ],
+  "remarks": "🇩🇪 Germany | Optimized Config | 5GB limit (replace server to bypass)"
+}
