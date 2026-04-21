@@ -113,5 +113,5 @@
       "protocol": "blackhole"
     }
   ],
-  "remarks": "🇷🇺brawl stars | (20 Гбит/c GAMES-Trojan⚡)"
+  "remarks": "🇷🇺BypassFull | (20 Гбит/c GAMES-Trojan⚡)"
 }
