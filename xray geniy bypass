@@ -109,23 +109,25 @@
       {
         "type": "field",
         "domain": [
+          "geosite:category-games"
+        ],
+        "outboundTag": "proxy_main"
+      },
+      {
+        "type": "field",
+        "domain": [
           "geosite:category-social",
           "geosite:netflix",
           "geosite:spotify",
           "geosite:discord",
           "geosite:twitch"
         ],
-        "outboundTag": "proxy_social"
-      },
-      {
-        "type": "field",
-        "domain": ["geosite:category-games"],
-        "outboundTag": "proxy_trojan"
+        "outboundTag": "proxy_main"
       },
       {
         "type": "field",
         "network": "tcp,udp",
-        "outboundTag": "proxy_trojan"
+        "outboundTag": "proxy_main"
       }
     ]
   },
@@ -217,7 +219,7 @@
       }
     },
     {
-      "tag": "proxy_social",
+      "tag": "proxy_main",
       "protocol": "vless",
       "settings": {
         "vnext": [
@@ -246,37 +248,6 @@
       }
     },
     {
-      "tag": "proxy_trojan",
-      "protocol": "trojan",
-      "settings": {
-        "servers": [
-          {
-            "address": "ru.federal-usa.com",
-            "port": 8443,
-            "password": "Qfw0MqoyNkSvqjRhZ_x5WNM3V_tF6q"
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "tls",
-        "tlsSettings": {
-          "serverName": "ru.federal-usa.com",
-          "allowInsecure": false,
-          "fingerprint": "chrome",
-          "alpn": ["h2", "http/1.1"]
-        },
-        "sockopt": {
-          "tcpFastOpen": true,
-          "tcpCongestion": "bbr",
-          "tos": 46
-        }
-      },
-      "mux": {
-        "enabled": false
-      }
-    },
-    {
       "tag": "direct",
       "protocol": "freedom",
       "streamSettings": {
@@ -293,5 +264,5 @@
       "protocol": "blackhole"
     }
   ],
-  "remarks": "⚡ Unified Smart Config | TG → VLESS(Telegram) | YT → VLESS(YouTube) | Social → VLESS(Social) | Other → Trojan"
+  "remarks": "✅ Fixed | Main = VLESS (Social) | TG/YT = dedicated | RU sites direct"
 }
