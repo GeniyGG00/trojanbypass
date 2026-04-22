@@ -1,17 +1,40 @@
 {
   "dns": {
     "servers": [
-      "144.31.151.64",
       "1.1.1.1",
-      "1.0.0.1",
-      "localhost"
+      "8.8.8.8",
+      "144.31.151.64"
     ],
-    "queryStrategy": "UseIP"
+    "queryStrategy": "UseIPv4",
+    "useSystemHosts": false,
+    "enableParallelQuery": true,
+    "disableFallback": false
+  },
+  "log": {
+    "loglevel": "warning"
   },
   "routing": {
-    "domainStrategy": "IPIfNonMatch",
+    "enabled": true,
+    "routeOnly": true,
     "domainMatcher": "hybrid",
+    "domainStrategy": "IPIfNonMatch",
     "rules": [
+      {
+        "type": "field",
+        "ip": [
+          "0.0.0.0/8",
+          "10.0.0.0/8",
+          "100.64.0.0/10",
+          "127.0.0.0/8",
+          "169.254.0.0/16",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "::1/128",
+          "fc00::/7",
+          "fe80::/10"
+        ],
+        "outboundTag": "direct"
+      },
       {
         "type": "field",
         "protocol": ["bittorrent"],
@@ -20,43 +43,89 @@
       {
         "type": "field",
         "domain": [
-          "domain:wildberries.ru", "domain:wildberries.by", "domain:wildberries.kz", "domain:wildberries.am", "domain:wildberries.kg", "domain:wildberries.uz",
-          "domain:sberbank.ru", "domain:sber.ru", "domain:sberbank.com",
-          "domain:ozon.ru", "domain:ozon.com", "domain:ozonbank.ru",
-          "domain:gosuslugi.ru", "domain:esia.gosuslugi.ru", "domain:lk.gosuslugi.ru", "domain:gu-st.ru",
-          "domain:yandex.ru", "domain:yandex.com", "domain:ya.ru", "domain:yandex.net",
-          "domain:kinopoisk.ru", "domain:hd.kinopoisk.ru",
-          "domain:ivi.ru", "domain:okko.tv", "domain:more.tv", "domain:start.ru", "domain:premier.one", "domain:megogo.ru", "domain:amediateka.ru",
-          "domain:vk.com", "domain:vk.ru", "domain:userapi.com", "domain:vk.me",
-          "domain:mail.ru", "domain:list.ru", "domain:inbox.ru", "domain:bk.ru",
-          "domain:rambler.ru", "domain:livejournal.com",
-          "domain:journal.tinkoff.ru", "domain:tbank.ru", "domain:tinkoff.ru",
-          "domain:avito.ru", "domain:youla.ru",
-          "domain:dns-shop.ru", "domain:citilink.ru", "domain:mvideo.ru", "domain:eldorado.ru", "domain:lamoda.ru",
+          "domain:wildberries.ru",
+          "domain:wildberries.by",
+          "domain:wildberries.kz",
+          "domain:wildberries.am",
+          "domain:wildberries.kg",
+          "domain:wildberries.uz",
+          "domain:sberbank.ru",
+          "domain:sber.ru",
+          "domain:sberbank.com",
+          "domain:ozon.ru",
+          "domain:ozon.com",
+          "domain:ozonbank.ru",
+          "domain:gosuslugi.ru",
+          "domain:esia.gosuslugi.ru",
+          "domain:lk.gosuslugi.ru",
+          "domain:gu-st.ru",
+          "domain:yandex.ru",
+          "domain:yandex.com",
+          "domain:ya.ru",
+          "domain:yandex.net",
+          "domain:kinopoisk.ru",
+          "domain:hd.kinopoisk.ru",
+          "domain:ivi.ru",
+          "domain:okko.tv",
+          "domain:more.tv",
+          "domain:start.ru",
+          "domain:premier.one",
+          "domain:megogo.ru",
+          "domain:amediateka.ru",
+          "domain:vk.com",
+          "domain:vk.ru",
+          "domain:userapi.com",
+          "domain:vk.me",
+          "domain:mail.ru",
+          "domain:list.ru",
+          "domain:inbox.ru",
+          "domain:bk.ru",
+          "domain:rambler.ru",
+          "domain:livejournal.com",
+          "domain:journal.tinkoff.ru",
+          "domain:tbank.ru",
+          "domain:tinkoff.ru",
+          "domain:avito.ru",
+          "domain:youla.ru",
+          "domain:dns-shop.ru",
+          "domain:citilink.ru",
+          "domain:mvideo.ru",
+          "domain:eldorado.ru",
+          "domain:lamoda.ru",
           "domain:aliexpress.ru"
         ],
         "outboundTag": "direct"
       },
       {
         "type": "field",
-        "domain": [
-          "domain:supercell.com", "domain:clashofclans.com", "domain:clashroyale.com", "domain:brawlstars.com"
-        ],
-        "outboundTag": "proxy_games"
+        "domain": ["geosite:telegram"],
+        "outboundTag": "proxy_telegram"
+      },
+      {
+        "type": "field",
+        "domain": ["geosite:youtube"],
+        "outboundTag": "proxy_youtube"
       },
       {
         "type": "field",
         "domain": [
-          "domain:youtube.com", "domain:youtu.be", "domain:googlevideo.com", "domain:ytimg.com",
-          "domain:telegram.org", "domain:t.me",
-          "domain:netflix.com", "domain:spotify.com", "domain:discord.com", "domain:discord.gg", "domain:twitch.tv"
+          "geosite:category-social",
+          "geosite:netflix",
+          "geosite:spotify",
+          "geosite:discord",
+          "geosite:twitch"
         ],
-        "outboundTag": "proxy_stream"
+        "outboundTag": "proxy_social"
+      },
+      {
+        "type": "field",
+        "domain": ["geosite:category-games"],
+        "outboundTag": "proxy_trojan"
       },
       {
         "type": "field",
         "network": "tcp,udp",
-        "outboundTag": "proxy_stream"
+        "outboundTag": "proxy_trojan"
       }
     ]
   },
@@ -64,78 +133,165 @@
     {
       "tag": "socks",
       "port": 10808,
-      "listen": "0.0.0.0",
+      "listen": "127.0.0.1",
       "protocol": "socks",
-      "settings": { "udp": true, "auth": "noauth" },
-      "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": ["http", "tls", "quic"]
+      }
     },
     {
       "tag": "http",
       "port": 10809,
-      "listen": "0.0.0.0",
+      "listen": "127.0.0.1",
       "protocol": "http",
-      "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": ["http", "tls", "quic"]
+      }
     }
   ],
   "outbounds": [
     {
-      "tag": "proxy_games",
+      "tag": "proxy_telegram",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "78.40.116.110",
+            "port": 443,
+            "users": [
+              {
+                "id": "c080d79c-346a-11f1-ad8f-dc08fb041e0d",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "www.blocket.se",
+          "publicKey": "Drg3RJ1fsmdl-mHJg2XAz8sBri58W_xGSA-3ewWcfBU",
+          "spiderX": "/recommerce",
+          "fingerprint": "randomized"
+        }
+      }
+    },
+    {
+      "tag": "proxy_youtube",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "78.40.116.186",
+            "port": 443,
+            "users": [
+              {
+                "id": "c080d79c-346a-11f1-ad8f-dc08fb041e0d",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "www.blocket.se",
+          "publicKey": "Drg3RJ1fsmdl-mHJg2XAz8sBri58W_xGSA-3ewWcfBU",
+          "spiderX": "/recommerce",
+          "fingerprint": "randomized"
+        }
+      }
+    },
+    {
+      "tag": "proxy_social",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "172.86.93.97",
+            "port": 443,
+            "users": [
+              {
+                "id": "c080d79c-346a-11f1-ad8f-dc08fb041e0d",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "www.google.com",
+          "publicKey": "uJ-BxRVgVWNn-cIgpBCtrYPShFR9wE7pn_JQxC2vgHc",
+          "spiderX": "/recommerce",
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "proxy_trojan",
       "protocol": "trojan",
       "settings": {
-        "servers": [{ "address": "ru.federal-usa.com", "port": 8443, "password": "Qfw0MqoyNkSvqjRhZ_x5WNM3V_tF6q" }]
+        "servers": [
+          {
+            "address": "ru.federal-usa.com",
+            "port": 8443,
+            "password": "Qfw0MqoyNkSvqjRhZ_x5WNM3V_tF6q"
+          }
+        ]
       },
       "streamSettings": {
         "network": "tcp",
         "security": "tls",
         "tlsSettings": {
-          "serverName": "vk.com",
+          "serverName": "ru.federal-usa.com",
           "allowInsecure": false,
           "fingerprint": "chrome",
           "alpn": ["h2", "http/1.1"]
         },
         "sockopt": {
           "tcpFastOpen": true,
-          "tcpKeepAlive": true,
-          "tcpKeepAliveInterval": 30,
           "tcpCongestion": "bbr",
           "tos": 46
         }
       },
-      "mux": { "enabled": false }
-    },
-    {
-      "tag": "proxy_stream",
-      "protocol": "trojan",
-      "settings": {
-        "servers": [{ "address": "ru.federal-usa.com", "port": 8443, "password": "Qfw0MqoyNkSvqjRhZ_x5WNM3V_tF6q" }]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "tls",
-        "tlsSettings": {
-          "serverName": "vk.com",
-          "allowInsecure": false,
-          "fingerprint": "chrome",
-          "alpn": ["h2", "http/1.1"]
-        },
-        "sockopt": {
-          "tcpFastOpen": true,
-          "tcpKeepAlive": true,
-          "tcpKeepAliveInterval": 30,
-          "tcpCongestion": "bbr"
-        }
-      },
-      "mux": { "enabled": false }
+      "mux": {
+        "enabled": false
+      }
     },
     {
       "tag": "direct",
       "protocol": "freedom",
-      "settings": { "domainStrategy": "AsIs" }
+      "streamSettings": {
+        "sockopt": {
+          "tcpNoDelay": true,
+          "tcpUserTimeout": 15000,
+          "tcpKeepAliveIdle": 45,
+          "tcpKeepAliveInterval": 45
+        }
+      }
     },
     {
       "tag": "block",
       "protocol": "blackhole"
     }
   ],
-  "remarks": "🇷🇺 FULL OPTIMIZED BYPASS"
+  "remarks": "⚡ Unified Smart Config | TG → VLESS(Telegram) | YT → VLESS(YouTube) | Social → VLESS(Social) | Other → Trojan"
 }
