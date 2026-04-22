@@ -1,14 +1,9 @@
 {
   "dns": {
-    "servers": [
-      "1.1.1.1",
-      "8.8.8.8",
-      "144.31.151.64"
-    ],
+    "servers": ["1.1.1.1", "8.8.8.8"],
     "queryStrategy": "UseIPv4",
     "useSystemHosts": false,
-    "enableParallelQuery": true,
-    "disableFallback": false
+    "enableParallelQuery": true
   },
   "log": {
     "loglevel": "warning"
@@ -44,55 +39,14 @@
         "type": "field",
         "domain": [
           "domain:wildberries.ru",
-          "domain:wildberries.by",
-          "domain:wildberries.kz",
-          "domain:wildberries.am",
-          "domain:wildberries.kg",
-          "domain:wildberries.uz",
           "domain:sberbank.ru",
-          "domain:sber.ru",
-          "domain:sberbank.com",
           "domain:ozon.ru",
-          "domain:ozon.com",
-          "domain:ozonbank.ru",
           "domain:gosuslugi.ru",
-          "domain:esia.gosuslugi.ru",
-          "domain:lk.gosuslugi.ru",
-          "domain:gu-st.ru",
           "domain:yandex.ru",
-          "domain:yandex.com",
           "domain:ya.ru",
-          "domain:yandex.net",
-          "domain:kinopoisk.ru",
-          "domain:hd.kinopoisk.ru",
-          "domain:ivi.ru",
-          "domain:okko.tv",
-          "domain:more.tv",
-          "domain:start.ru",
-          "domain:premier.one",
-          "domain:megogo.ru",
-          "domain:amediateka.ru",
           "domain:vk.com",
-          "domain:vk.ru",
-          "domain:userapi.com",
-          "domain:vk.me",
           "domain:mail.ru",
-          "domain:list.ru",
-          "domain:inbox.ru",
-          "domain:bk.ru",
-          "domain:rambler.ru",
-          "domain:livejournal.com",
-          "domain:journal.tinkoff.ru",
-          "domain:tbank.ru",
-          "domain:tinkoff.ru",
-          "domain:avito.ru",
-          "domain:youla.ru",
-          "domain:dns-shop.ru",
-          "domain:citilink.ru",
-          "domain:mvideo.ru",
-          "domain:eldorado.ru",
-          "domain:lamoda.ru",
-          "domain:aliexpress.ru"
+          "domain:avito.ru"
         ],
         "outboundTag": "direct"
       },
@@ -105,24 +59,6 @@
         "type": "field",
         "domain": ["geosite:youtube"],
         "outboundTag": "proxy_youtube"
-      },
-      {
-        "type": "field",
-        "domain": [
-          "geosite:category-games"
-        ],
-        "outboundTag": "proxy_main"
-      },
-      {
-        "type": "field",
-        "domain": [
-          "geosite:category-social",
-          "geosite:netflix",
-          "geosite:spotify",
-          "geosite:discord",
-          "geosite:twitch"
-        ],
-        "outboundTag": "proxy_main"
       },
       {
         "type": "field",
@@ -224,7 +160,7 @@
       "settings": {
         "vnext": [
           {
-            "address": "172.86.93.97",
+            "address": "78.40.116.110",
             "port": 443,
             "users": [
               {
@@ -240,10 +176,10 @@
         "network": "tcp",
         "security": "reality",
         "realitySettings": {
-          "serverName": "www.google.com",
-          "publicKey": "uJ-BxRVgVWNn-cIgpBCtrYPShFR9wE7pn_JQxC2vgHc",
+          "serverName": "www.blocket.se",
+          "publicKey": "Drg3RJ1fsmdl-mHJg2XAz8sBri58W_xGSA-3ewWcfBU",
           "spiderX": "/recommerce",
-          "fingerprint": "chrome"
+          "fingerprint": "randomized"
         }
       }
     },
@@ -258,11 +194,7 @@
           "tcpKeepAliveInterval": 45
         }
       }
-    },
-    {
-      "tag": "block",
-      "protocol": "blackhole"
     }
   ],
-  "remarks": "✅ Fixed | Main = VLESS (Social) | TG/YT = dedicated | RU sites direct"
+  "remarks": "✅ WORKING | TG/YT dedicated | Main = TG server (78.40.116.110)"
 }
