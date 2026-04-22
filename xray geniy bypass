@@ -1,17 +1,12 @@
 {
   "dns": {
     "servers": ["1.1.1.1", "8.8.8.8"],
-    "queryStrategy": "UseIPv4",
-    "useSystemHosts": false,
-    "enableParallelQuery": true
+    "queryStrategy": "UseIPv4"
   },
   "log": {
     "loglevel": "warning"
   },
   "routing": {
-    "enabled": true,
-    "routeOnly": true,
-    "domainMatcher": "hybrid",
     "domainStrategy": "IPIfNonMatch",
     "rules": [
       {
@@ -23,10 +18,7 @@
           "127.0.0.0/8",
           "169.254.0.0/16",
           "172.16.0.0/12",
-          "192.168.0.0/16",
-          "::1/128",
-          "fc00::/7",
-          "fe80::/10"
+          "192.168.0.0/16"
         ],
         "outboundTag": "direct"
       },
@@ -34,36 +26,6 @@
         "type": "field",
         "protocol": ["bittorrent"],
         "outboundTag": "direct"
-      },
-      {
-        "type": "field",
-        "domain": [
-          "domain:wildberries.ru",
-          "domain:sberbank.ru",
-          "domain:ozon.ru",
-          "domain:gosuslugi.ru",
-          "domain:yandex.ru",
-          "domain:ya.ru",
-          "domain:vk.com",
-          "domain:mail.ru",
-          "domain:avito.ru"
-        ],
-        "outboundTag": "direct"
-      },
-      {
-        "type": "field",
-        "domain": ["geosite:telegram"],
-        "outboundTag": "proxy_telegram"
-      },
-      {
-        "type": "field",
-        "domain": ["geosite:youtube"],
-        "outboundTag": "proxy_youtube"
-      },
-      {
-        "type": "field",
-        "network": "tcp,udp",
-        "outboundTag": "proxy_main"
       }
     ]
   },
@@ -73,104 +35,29 @@
       "port": 10808,
       "listen": "127.0.0.1",
       "protocol": "socks",
-      "settings": {
-        "udp": true,
-        "auth": "noauth"
-      },
-      "sniffing": {
-        "enabled": true,
-        "routeOnly": true,
-        "destOverride": ["http", "tls", "quic"]
-      }
+      "settings": { "udp": true }
     },
     {
       "tag": "http",
       "port": 10809,
       "listen": "127.0.0.1",
-      "protocol": "http",
-      "sniffing": {
-        "enabled": true,
-        "routeOnly": true,
-        "destOverride": ["http", "tls", "quic"]
-      }
+      "protocol": "http"
     }
   ],
   "outbounds": [
     {
-      "tag": "proxy_telegram",
+      "tag": "proxy",
       "protocol": "vless",
       "settings": {
-        "vnext": [
-          {
-            "address": "78.40.116.110",
-            "port": 443,
-            "users": [
-              {
-                "id": "c080d79c-346a-11f1-ad8f-dc08fb041e0d",
-                "encryption": "none",
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "www.blocket.se",
-          "publicKey": "Drg3RJ1fsmdl-mHJg2XAz8sBri58W_xGSA-3ewWcfBU",
-          "spiderX": "/recommerce",
-          "fingerprint": "randomized"
-        }
-      }
-    },
-    {
-      "tag": "proxy_youtube",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "78.40.116.186",
-            "port": 443,
-            "users": [
-              {
-                "id": "c080d79c-346a-11f1-ad8f-dc08fb041e0d",
-                "encryption": "none",
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "www.blocket.se",
-          "publicKey": "Drg3RJ1fsmdl-mHJg2XAz8sBri58W_xGSA-3ewWcfBU",
-          "spiderX": "/recommerce",
-          "fingerprint": "randomized"
-        }
-      }
-    },
-    {
-      "tag": "proxy_main",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "78.40.116.110",
-            "port": 443,
-            "users": [
-              {
-                "id": "c080d79c-346a-11f1-ad8f-dc08fb041e0d",
-                "encryption": "none",
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
+        "vnext": [{
+          "address": "78.40.116.110",
+          "port": 443,
+          "users": [{
+            "id": "c080d79c-346a-11f1-ad8f-dc08fb041e0d",
+            "encryption": "none",
+            "flow": "xtls-rprx-vision"
+          }]
+        }]
       },
       "streamSettings": {
         "network": "tcp",
@@ -185,16 +72,7 @@
     },
     {
       "tag": "direct",
-      "protocol": "freedom",
-      "streamSettings": {
-        "sockopt": {
-          "tcpNoDelay": true,
-          "tcpUserTimeout": 15000,
-          "tcpKeepAliveIdle": 45,
-          "tcpKeepAliveInterval": 45
-        }
-      }
+      "protocol": "freedom"
     }
-  ],
-  "remarks": "✅ WORKING | TG/YT dedicated | Main = TG server (78.40.116.110)"
+  ]
 }
