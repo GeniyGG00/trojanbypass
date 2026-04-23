@@ -1,31 +1,70 @@
 {
   "dns": {
-    "servers": ["1.1.1.1", "8.8.8.8"],
-    "queryStrategy": "UseIPv4"
-  },
-  "log": {
-    "loglevel": "warning"
+    "tag": "dns",
+    "servers": [
+      "https://cloudflare-dns.com/dns-query",
+      "1.1.1.1"
+    ],
+    "queryStrategy": "UseIP",
+    "disableFallback": true
   },
   "routing": {
     "domainStrategy": "IPIfNonMatch",
+    "domainMatcher": "hybrid",
     "rules": [
       {
         "type": "field",
-        "ip": [
-          "0.0.0.0/8",
-          "10.0.0.0/8",
-          "100.64.0.0/10",
-          "127.0.0.0/8",
-          "169.254.0.0/16",
-          "172.16.0.0/12",
-          "192.168.0.0/16"
-        ],
-        "outboundTag": "direct"
+        "inboundTag": ["dns"],
+        "outboundTag": "proxy"
+      },
+      {
+        "type": "field",
+        "domain": ["geosite:category-ads-all"],
+        "outboundTag": "block"
       },
       {
         "type": "field",
         "protocol": ["bittorrent"],
         "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:wildberries.ru", "domain:wildberries.by", "domain:wildberries.kz",
+          "domain:wildberries.am", "domain:wildberries.kg", "domain:wildberries.uz",
+          "domain:sberbank.ru", "domain:sber.ru", "domain:sberbank.com",
+          "domain:ozon.ru", "domain:ozon.com", "domain:ozonbank.ru",
+          "domain:gosuslugi.ru", "domain:esia.gosuslugi.ru", "domain:lk.gosuslugi.ru",
+          "domain:gu-st.ru",
+          "domain:yandex.ru", "domain:yandex.com", "domain:ya.ru", "domain:yandex.net",
+          "domain:kinopoisk.ru", "domain:hd.kinopoisk.ru", "domain:ivi.ru",
+          "domain:okko.tv", "domain:more.tv", "domain:start.ru", "domain:premier.one",
+          "domain:megogo.ru", "domain:amediateka.ru",
+          "domain:vk.com", "domain:vk.ru", "domain:userapi.com", "domain:vk.me",
+          "domain:mail.ru", "domain:list.ru", "domain:inbox.ru", "domain:bk.ru",
+          "domain:rambler.ru", "domain:journal.tinkoff.ru", "domain:tbank.ru",
+          "domain:tinkoff.ru", "domain:avito.ru", "domain:youla.ru",
+          "domain:dns-shop.ru", "domain:citilink.ru", "domain:mvideo.ru",
+          "domain:eldorado.ru", "domain:lamoda.ru", "domain:aliexpress.ru"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:youtube",
+          "geosite:telegram",
+          "geosite:netflix",
+          "geosite:spotify",
+          "geosite:discord",
+          "geosite:twitch"
+        ],
+        "outboundTag": "proxy"
+      },
+      {
+        "type": "field",
+        "network": "tcp,udp",
+        "outboundTag": "proxy"
       }
     ]
   },
@@ -35,44 +74,63 @@
       "port": 10808,
       "listen": "127.0.0.1",
       "protocol": "socks",
-      "settings": { "udp": true }
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": false,
+        "destOverride": ["http", "tls", "quic"]
+      }
     },
     {
       "tag": "http",
       "port": 10809,
       "listen": "127.0.0.1",
-      "protocol": "http"
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": false,
+        "destOverride": ["http", "tls", "quic"]
+      }
     }
   ],
   "outbounds": [
     {
       "tag": "proxy",
-      "protocol": "vless",
+      "protocol": "trojan",
       "settings": {
-        "vnext": [{
-          "address": "78.40.116.110",
-          "port": 443,
-          "users": [{
-            "id": "c080d79c-346a-11f1-ad8f-dc08fb041e0d",
-            "encryption": "none",
-            "flow": "xtls-rprx-vision"
-          }]
-        }]
+        "servers": [
+          {
+            "address": "87.239.104.97",
+            "port": 7443,
+            "password": "Qfw0MqoyNkSvqjRhZ_x5WNM3V_tF6q"
+          }
+        ]
       },
       "streamSettings": {
         "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "www.blocket.se",
-          "publicKey": "Drg3RJ1fsmdl-mHJg2XAz8sBri58W_xGSA-3ewWcfBU",
-          "spiderX": "/recommerce",
-          "fingerprint": "randomized"
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "plthree.rushtaxi.ru",
+          "allowInsecure": false,
+          "fingerprint": "ios",
+          "alpn": ["h2", "http/1.1"]
         }
       }
     },
     {
       "tag": "direct",
-      "protocol": "freedom"
+      "protocol": "freedom",
+      "settings": {"domainStrategy": "AsIs"}
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
     }
   ]
 }
