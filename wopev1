@@ -1,0 +1,223 @@
+{
+    "dns": {
+        "queryStrategy": "UseIP",
+        "servers": [
+            "144.31.151.64",
+            "1.1.1.1"
+        ]
+    },
+    "inbounds": [
+        {
+            "listen": "0.0.0.0",
+            "port": 10808,
+            "protocol": "socks",
+            "settings": {
+                "auth": "noauth",
+                "udp": true
+            },
+            "sniffing": {
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ],
+                "enabled": true,
+                "routeOnly": false
+            },
+            "tag": "socks"
+        },
+        {
+            "listen": "0.0.0.0",
+            "port": 10809,
+            "protocol": "http",
+            "settings": {
+                "allowTransparent": false
+            },
+            "sniffing": {
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ],
+                "enabled": true,
+                "routeOnly": false
+            },
+            "tag": "http"
+        }
+    ],
+    "meta": null,
+    "outbounds": [
+        {
+            "mux": {
+                "enabled": false
+            },
+            "protocol": "trojan",
+            "settings": {
+                "servers": [
+                    {
+                        "address": "ru.federal-usa.com",
+                        "password": "Qfw0MqoyNkSvqjRhZ_x5WNM3V_tF6q",
+                        "port": 8443
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "tls",
+                "sockopt": {
+                    "tcpCongestion": "bbr",
+                    "tcpFastOpen": true,
+                    "tos": 46
+                },
+                "tlsSettings": {
+                    "allowInsecure": false,
+                    "alpn": [
+                        "h2",
+                        "http/1.1"
+                    ],
+                    "fingerprint": "chrome",
+                    "serverName": "ru.federal-usa.com"
+                }
+            },
+            "tag": "proxy_games"
+        },
+        {
+            "mux": {
+                "enabled": false
+            },
+            "protocol": "trojan",
+            "settings": {
+                "servers": [
+                    {
+                        "address": "ru.federal-usa.com",
+                        "password": "Qfw0MqoyNkSvqjRhZ_x5WNM3V_tF6q",
+                        "port": 8443
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "tls",
+                "sockopt": {
+                    "tcpCongestion": "bbr",
+                    "tcpFastOpen": true
+                },
+                "tlsSettings": {
+                    "allowInsecure": false,
+                    "alpn": [
+                        "h2",
+                        "http/1.1"
+                    ],
+                    "fingerprint": "chrome",
+                    "serverName": "ru.federal-usa.com"
+                }
+            },
+            "tag": "proxy_stream"
+        },
+        {
+            "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "AsIs"
+            },
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "block"
+        }
+    ],
+    "remarks": "🇷🇺 Wope v1 | 4K YT | RUS BYPASS ⚡",
+    "routing": {
+        "domainMatcher": "hybrid",
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+            {
+                "outboundTag": "direct",
+                "protocol": [
+                    "bittorrent"
+                ],
+                "type": "field"
+            },
+            {
+                "domain": [
+                    "domain:wildberries.ru",
+                    "domain:wildberries.by",
+                    "domain:wildberries.kz",
+                    "domain:wildberries.am",
+                    "domain:wildberries.kg",
+                    "domain:wildberries.uz",
+                    "domain:sberbank.ru",
+                    "domain:sber.ru",
+                    "domain:sberbank.com",
+                    "domain:ozon.ru",
+                    "domain:ozon.com",
+                    "domain:ozonbank.ru",
+                    "domain:gosuslugi.ru",
+                    "domain:esia.gosuslugi.ru",
+                    "domain:lk.gosuslugi.ru",
+                    "domain:gu-st.ru",
+                    "domain:yandex.ru",
+                    "domain:yandex.com",
+                    "domain:ya.ru",
+                    "domain:yandex.net",
+                    "domain:kinopoisk.ru",
+                    "domain:hd.kinopoisk.ru",
+                    "domain:ivi.ru",
+                    "domain:okko.tv",
+                    "domain:more.tv",
+                    "domain:start.ru",
+                    "domain:premier.one",
+                    "domain:megogo.ru",
+                    "domain:amediateka.ru",
+                    "domain:vk.com",
+                    "domain:vk.ru",
+                    "domain:userapi.com",
+                    "domain:vk.me",
+                    "domain:mail.ru",
+                    "domain:list.ru",
+                    "domain:inbox.ru",
+                    "domain:bk.ru",
+                    "domain:rambler.ru",
+                    "domain:livejournal.com",
+                    "domain:journal.tinkoff.ru",
+                    "domain:tbank.ru",
+                    "domain:tinkoff.ru",
+                    "domain:avito.ru",
+                    "domain:youla.ru",
+                    "domain:dns-shop.ru",
+                    "domain:citilink.ru",
+                    "domain:mvideo.ru",
+                    "domain:eldorado.ru",
+                    "domain:lamoda.ru",
+                    "domain:aliexpress.ru"
+                ],
+                "outboundTag": "direct",
+                "type": "field"
+            },
+            {
+                "domain": [
+                    "geosite:category-games"
+                ],
+                "outboundTag": "proxy_games",
+                "type": "field"
+            },
+            {
+                "domain": [
+                    "geosite:youtube",
+                    "geosite:telegram",
+                    "geosite:netflix",
+                    "geosite:spotify",
+                    "geosite:discord",
+                    "geosite:twitch"
+                ],
+                "outboundTag": "proxy_stream",
+                "type": "field"
+            },
+            {
+                "network": "tcp,udp",
+                "outboundTag": "proxy_stream",
+                "type": "field"
+            }
+        ]
+    }
+}
