@@ -1,0 +1,190 @@
+{
+    "dns": {
+        "disableFallback": true,
+        "queryStrategy": "UseIP",
+        "servers": [
+            "https://cloudflare-dns.com/dns-query",
+            "1.1.1.1"
+        ],
+        "tag": "dns"
+    },
+    "inbounds": [
+        {
+            "listen": "127.0.0.1",
+            "port": 10808,
+            "protocol": "socks",
+            "settings": {
+                "auth": "noauth",
+                "udp": true
+            },
+            "sniffing": {
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ],
+                "enabled": true,
+                "routeOnly": false
+            },
+            "tag": "socks"
+        },
+        {
+            "listen": "127.0.0.1",
+            "port": 10809,
+            "protocol": "http",
+            "settings": {
+                "allowTransparent": false
+            },
+            "sniffing": {
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ],
+                "enabled": true,
+                "routeOnly": false
+            },
+            "tag": "http"
+        }
+    ],
+    "meta": null,
+    "outbounds": [
+        {
+            "protocol": "trojan",
+            "settings": {
+                "servers": [
+                    {
+                        "address": "87.239.104.97",
+                        "password": "Qfw0MqoyNkSvqjRhZ_x5WNM3V_tF6q",
+                        "port": 7443
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "tls",
+                "tlsSettings": {
+                    "allowInsecure": false,
+                    "alpn": [
+                        "h2",
+                        "http/1.1"
+                    ],
+                    "fingerprint": "ios",
+                    "serverName": "plthree.rushtaxi.ru"
+                }
+            },
+            "tag": "proxy"
+        },
+        {
+            "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "AsIs"
+            },
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "block"
+        }
+    ],
+    "remarks": "Wope FULL v2 Польша — полный обход белых списков работает весь интернет",
+    "routing": {
+        "domainMatcher": "hybrid",
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+            {
+                "inboundTag": [
+                    "dns"
+                ],
+                "outboundTag": "proxy",
+                "type": "field"
+            },
+            {
+                "domain": [
+                    "geosite:category-ads-all"
+                ],
+                "outboundTag": "block",
+                "type": "field"
+            },
+            {
+                "outboundTag": "direct",
+                "protocol": [
+                    "bittorrent"
+                ],
+                "type": "field"
+            },
+            {
+                "domain": [
+                    "domain:wildberries.ru",
+                    "domain:wildberries.by",
+                    "domain:wildberries.kz",
+                    "domain:wildberries.am",
+                    "domain:wildberries.kg",
+                    "domain:wildberries.uz",
+                    "domain:sberbank.ru",
+                    "domain:sber.ru",
+                    "domain:sberbank.com",
+                    "domain:ozon.ru",
+                    "domain:ozon.com",
+                    "domain:ozonbank.ru",
+                    "domain:gosuslugi.ru",
+                    "domain:esia.gosuslugi.ru",
+                    "domain:lk.gosuslugi.ru",
+                    "domain:gu-st.ru",
+                    "domain:yandex.ru",
+                    "domain:yandex.com",
+                    "domain:ya.ru",
+                    "domain:yandex.net",
+                    "domain:kinopoisk.ru",
+                    "domain:hd.kinopoisk.ru",
+                    "domain:ivi.ru",
+                    "domain:okko.tv",
+                    "domain:more.tv",
+                    "domain:start.ru",
+                    "domain:premier.one",
+                    "domain:megogo.ru",
+                    "domain:amediateka.ru",
+                    "domain:vk.com",
+                    "domain:vk.ru",
+                    "domain:userapi.com",
+                    "domain:vk.me",
+                    "domain:mail.ru",
+                    "domain:list.ru",
+                    "domain:inbox.ru",
+                    "domain:bk.ru",
+                    "domain:rambler.ru",
+                    "domain:journal.tinkoff.ru",
+                    "domain:tbank.ru",
+                    "domain:tinkoff.ru",
+                    "domain:avito.ru",
+                    "domain:youla.ru",
+                    "domain:dns-shop.ru",
+                    "domain:citilink.ru",
+                    "domain:mvideo.ru",
+                    "domain:eldorado.ru",
+                    "domain:lamoda.ru",
+                    "domain:aliexpress.ru"
+                ],
+                "outboundTag": "direct",
+                "type": "field"
+            },
+            {
+                "domain": [
+                    "geosite:youtube",
+                    "geosite:telegram",
+                    "geosite:netflix",
+                    "geosite:spotify",
+                    "geosite:discord",
+                    "geosite:twitch"
+                ],
+                "outboundTag": "proxy",
+                "type": "field"
+            },
+            {
+                "network": "tcp,udp",
+                "outboundTag": "proxy",
+                "type": "field"
+            }
+        ]
+    }
+}
