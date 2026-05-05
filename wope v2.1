@@ -1,0 +1,110 @@
+{
+    "dns": {
+        "disableFallback": true,
+        // Для обхода блокировок лучше использовать "UseIP" или оставить "UseIPv4",
+        // но обязательно добавить резервный DNS, чтобы Cloudflare не тупил
+        "queryStrategy": "UseIP",
+        "servers": [
+            "https://cloudflare-dns.com/dns-query",
+            {
+                "address": "https://dns.quad9.net/dns-query",
+                "domains": ["geosite:category-ru"]
+            }
+        ],
+        "tag": "dns"
+    },
+    "routing": {
+        "domainMatcher": "hybrid",
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+            // 1. Блокировка рекламы
+            {
+                "domain": ["geosite:category-ads-all"],
+                "outboundTag": "block",
+                "type": "field"
+            },
+            // 2. Торренты напрямую
+            {
+                "outboundTag": "direct",
+                "protocol": ["bittorrent"],
+                "type": "field"
+            },
+            // 3. Прямой доступ к российским сайтам и сервисам (добавил tbank в домены, поправил)
+            {
+                "domain": [
+                    "geosite:category-gov-ru",
+                    "domain:wildberries.ru",
+                    "domain:wildberries.by",
+                    "domain:wildberries.kz",
+                    "domain:sberbank.ru",
+                    "domain:sber.ru",
+                    "domain:sberbank.com",
+                    "domain:ozon.ru",
+                    "domain:ozon.com",
+                    "domain:gosuslugi.ru",
+                    "domain:esia.gosuslugi.ru",
+                    "domain:lk.gosuslugi.ru",
+                    "domain:gu-st.ru",
+                    "domain:yandex.ru",
+                    "domain:yandex.com",
+                    "domain:ya.ru",
+                    "domain:yandex.net",
+                    "domain:kinopoisk.ru",
+                    "domain:hd.kinopoisk.ru",
+                    "domain:ivi.ru",
+                    "domain:okko.tv",
+                    "domain:start.ru",
+                    "domain:premier.one",
+                    "domain:vk.com",
+                    "domain:vk.ru",
+                    "domain:userapi.com",
+                    "domain:mail.ru",
+                    "domain:list.ru",
+                    "domain:inbox.ru",
+                    "domain:bk.ru",
+                    "domain:rambler.ru",
+                    "domain:journal.tinkoff.ru",
+                    "domain:tbank.ru",
+                    "domain:tinkoff.ru",
+                    "domain:avito.ru",
+                    "domain:youla.ru",
+                    "domain:dns-shop.ru",
+                    "domain:citilink.ru",
+                    "domain:mvideo.ru",
+                    "domain:eldorado.ru",
+                    "domain:lamoda.ru",
+                    "domain:aliexpress.ru",
+                    "domain:ozon.ru",
+                    "domain:rutube.ru",
+                    "domain:1tv.ru",
+                    "domain:ntv.ru",
+                    "domain:mos.ru"
+                ],
+                "outboundTag": "direct",
+                "type": "field"
+            },
+            // 4. Иностранный контент через прокси (добавил Twitter/X, Instagram* и т.д.)
+            {
+                "domain": [
+                    "geosite:youtube",
+                    "geosite:telegram",
+                    "geosite:netflix",
+                    "geosite:spotify",
+                    "geosite:discord",
+                    "geosite:twitch",
+                    "geosite:twitter",
+                    "geosite:instagram"
+                ],
+                "outboundTag": "proxy",
+                "type": "field"
+            },
+            // 5. ВАЖНО: Все остальное по умолчанию напрямую.
+            // Убираем ваше последнее правило "proxy" для всего tcp/udp
+            {
+                "network": "tcp,udp",
+                "outboundTag": "direct",
+                "type": "field"
+            }
+        ]
+    }
+}
